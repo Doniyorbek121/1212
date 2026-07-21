@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practice Tests — IELTS Master</title>
+  <meta name="description" content="Choose an IELTS practice module: Reading, Listening, Writing, Speaking, vocabulary and the AI tutor. Track your progress across skills." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232f6bf6'/><text x='50' y='68' font-size='54' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>iM</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <div class="container page-head">
+    <span class="eyebrow">🚀 Practice hub</span>
+    <h1>Pick a skill and start</h1>
+    <p style="max-width:620px;margin:0 auto;">Every module is interactive and self-marking. Your latest results are saved right here in your browser.</p>
+  </div>
+
+  <div class="container" style="padding-bottom:40px;">
+    <!-- Progress summary -->
+    <div class="panel panel-pad" id="progressPanel" style="margin-bottom:26px;">
+      <div class="flex between items-center wrap gap">
+        <div><h3 class="mb-0">Your progress</h3><p class="small muted mb-0">Based on your most recent attempts on this device.</p></div>
+        <button class="btn btn-ghost" id="clearProgress">Reset progress</button>
+      </div>
+      <div class="grid grid-4 mt-3" id="progressGrid"></div>
+    </div>
+
+    <div class="grid grid-3">
+      <a href="reading.html" class="card c-read reveal" style="display:block;">
+        <div class="ico">📖</div><h3>Reading</h3>
+        <p>A full Academic passage with 13 questions across three question types.</p>
+        <span class="tag mt-2" style="display:inline-block;">13 questions · 20 min</span>
+      </a>
+      <a href="listening.html" class="card c-listen reveal" style="display:block;">
+        <div class="ico">🎧</div><h3>Listening</h3>
+        <p>Section 1 with real audio playback, note completion and multiple choice.</p>
+        <span class="tag mt-2" style="display:inline-block;">10 questions · audio</span>
+      </a>
+      <a href="writing.html" class="card c-write reveal" style="display:block;">
+        <div class="ico">✍️</div><h3>Writing</h3>
+        <p>Task 1 &amp; Task 2 prompts, live word counter, model answers and AI feedback.</p>
+        <span class="tag mt-2" style="display:inline-block;">3 tasks · AI graded</span>
+      </a>
+      <a href="speaking.html" class="card c-speak reveal" style="display:block;">
+        <div class="ico">🗣️</div><h3>Speaking</h3>
+        <p>Parts 1–3 questions and cue cards with a built-in prep and talk timer.</p>
+        <span class="tag mt-2" style="display:inline-block;">3 parts · timer</span>
+      </a>
+      <a href="ai-tutor.html" class="card reveal" style="display:block;">
+        <div class="ico">🤖</div><h3>AI Tutor</h3>
+        <p>Chat with a Gemini-powered IELTS tutor for feedback, model answers and plans.</p>
+        <span class="tag mt-2" style="display:inline-block;">Gemini · your key</span>
+      </a>
+      <a href="vocabulary.html" class="card reveal" style="display:block;">
+        <div class="ico">📚</div><h3>Vocabulary</h3>
+        <p>Flashcards across five high-frequency IELTS topics with examples.</p>
+        <span class="tag mt-2" style="display:inline-block;">25 cards · 5 topics</span>
+      </a>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/practice.js"></script>
+</body>
+</html>

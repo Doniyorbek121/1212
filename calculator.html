@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IELTS Band Score Calculator — IELTS Master</title>
+  <meta name="description" content="Calculate your overall IELTS band score from your four skill scores, and convert Listening & Reading raw scores to bands with the official rounding rules." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232f6bf6'/><text x='50' y='68' font-size='54' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>iM</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <div class="container page-head">
+    <span class="eyebrow">🎯 Know your score</span>
+    <h1>Band score calculator</h1>
+    <p style="max-width:620px;margin:0 auto;">Enter your four skill bands to get your official overall score, or convert raw Listening/Reading marks into bands.</p>
+  </div>
+
+  <div class="container" style="padding-bottom:80px;max-width:900px;">
+    <div class="reading-layout">
+      <!-- OVERALL -->
+      <div class="panel panel-pad">
+        <h3>Overall band from 4 skills</h3>
+        <p class="small muted">Each skill is a band from 4.0–9.0 in 0.5 steps. The average is rounded using the official IELTS rule (.25 → up to .5, .75 → up to next whole).</p>
+        <div class="calc-grid mt-2">
+          <div class="calc-field"><label>Listening</label><input class="field" type="number" id="in-l" min="0" max="9" step="0.5" value="7"></div>
+          <div class="calc-field"><label>Reading</label><input class="field" type="number" id="in-r" min="0" max="9" step="0.5" value="6.5"></div>
+          <div class="calc-field"><label>Writing</label><input class="field" type="number" id="in-w" min="0" max="9" step="0.5" value="6"></div>
+          <div class="calc-field"><label>Speaking</label><input class="field" type="number" id="in-s" min="0" max="9" step="0.5" value="7"></div>
+        </div>
+        <div class="overall-band mt-3">
+          <div class="small" style="opacity:.85;">Overall band score</div>
+          <div class="big" id="overall">6.5</div>
+          <div id="overallMsg" style="opacity:.9;"></div>
+        </div>
+      </div>
+
+      <!-- RAW CONVERTER -->
+      <div class="panel panel-pad">
+        <h3>Raw score → band</h3>
+        <p class="small muted">Listening and Academic Reading are both marked out of 40. Enter how many you got correct.</p>
+        <div class="tabs mt-2" id="rawTabs">
+          <button class="tab active" data-t="listening">Listening</button>
+          <button class="tab" data-t="areading">Academic Reading</button>
+          <button class="tab" data-t="greading">General Reading</button>
+        </div>
+        <div class="calc-field"><label>Correct answers (0–40)</label>
+          <input class="field" type="number" id="raw" min="0" max="40" step="1" value="30"></div>
+        <div class="overall-band mt-3" style="background:linear-gradient(135deg,var(--accent-600),var(--brand-600));">
+          <div class="small" style="opacity:.85;" id="rawLabel">Listening band</div>
+          <div class="big" id="rawBand">7.0</div>
+        </div>
+        <p class="small muted mt-2">Approximate conversion — real tests vary slightly by version. Writing and Speaking are scored by examiners against band descriptors.</p>
+      </div>
+    </div>
+
+    <!-- BAND MEANING -->
+    <div class="panel panel-pad mt-3">
+      <h3>What your band means</h3>
+      <div class="grid grid-3 mt-2">
+        <div><b>Band 9 — Expert</b><p class="small">Fully operational command of English: accurate, fluent and complete.</p></div>
+        <div><b>Band 8 — Very good</b><p class="small">Fully operational with only occasional unsystematic inaccuracies.</p></div>
+        <div><b>Band 7 — Good</b><p class="small">Operational command; handles complex language well despite some errors.</p></div>
+        <div><b>Band 6 — Competent</b><p class="small">Generally effective command despite some inaccuracies and misunderstandings.</p></div>
+        <div><b>Band 5 — Modest</b><p class="small">Partial command; copes with overall meaning in most situations.</p></div>
+        <div><b>Band 4 — Limited</b><p class="small">Basic competence limited to familiar situations; frequent problems.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/calculator.js"></script>
+</body>
+</html>

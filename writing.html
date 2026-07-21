@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IELTS Writing Lab — Task 1 & Task 2 Practice — IELTS Master</title>
+  <meta name="description" content="Practise IELTS Writing Task 1 and Task 2 with real prompts, a live word counter, band descriptors and annotated model answers." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232f6bf6'/><text x='50' y='68' font-size='54' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>iM</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <div class="container page-head">
+    <div class="breadcrumb"><a href="practice.html">Practice</a> / Writing</div>
+    <span class="eyebrow">✍️ Writing lab</span>
+    <h1>Writing practice</h1>
+    <p style="max-width:640px;margin:0 auto;">Choose a task, write your response with a live word counter, then compare with a band-9 model answer.</p>
+  </div>
+
+  <div class="container" style="padding-bottom:80px;">
+    <div class="tabs" id="taskTabs">
+      <button class="tab active" data-task="t2">Task 2 — Essay</button>
+      <button class="tab" data-task="t1a">Task 1 — Academic (chart)</button>
+      <button class="tab" data-task="t1g">Task 1 — General (letter)</button>
+    </div>
+
+    <div class="reading-layout">
+      <div>
+        <!-- PROMPT -->
+        <div class="panel panel-pad" style="margin-bottom:18px;">
+          <div class="tag" id="promptType">Task 2</div>
+          <p id="promptText" style="font-size:1.05rem;color:var(--text);font-weight:600;margin-top:12px;"></p>
+          <p class="small muted mb-0" id="promptMeta"></p>
+        </div>
+
+        <!-- EDITOR -->
+        <div class="panel panel-pad">
+          <textarea class="field writing-area" id="editor" placeholder="Start writing your response here…"></textarea>
+          <div class="wc-bar">
+            <span>Words: <b id="wc">0</b></span>
+            <span>Sentences: <b id="sc">0</b></span>
+            <span>Paragraphs: <b id="pc">0</b></span>
+            <span id="minNote">Minimum: <b>250</b></span>
+            <span id="timeNote">Suggested: <b>40 min</b></span>
+          </div>
+          <div class="flex gap-sm wrap mt-3">
+            <button class="btn btn-accent" id="aiBtn">🤖 Get AI feedback</button>
+            <button class="btn btn-primary" id="modelBtn">Show model answer</button>
+            <button class="btn btn-ghost" id="clearBtn">Clear</button>
+            <button class="btn btn-ghost" id="saveBtn">Save draft</button>
+          </div>
+        </div>
+
+        <!-- AI feedback -->
+        <div class="panel panel-pad mt-3" id="aiWrap" style="display:none;">
+          <div class="flex between items-center"><h3 class="mb-0">🤖 AI examiner feedback</h3><span class="tag">Gemini</span></div>
+          <div id="aiKeyPanel" class="mt-2"></div>
+          <div id="aiFeedback" class="mt-2" style="white-space:pre-wrap;line-height:1.65;color:var(--text);"></div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR: checklist + model -->
+      <div>
+        <div class="panel panel-pad" style="margin-bottom:18px;">
+          <h3>Band-7+ checklist</h3>
+          <ul class="check-list" id="checklist"></ul>
+        </div>
+        <div class="panel panel-pad" id="modelPanel" style="display:none;">
+          <div class="flex between items-center"><h3 class="mb-0">Model answer</h3><span class="band-pill">Band 9</span></div>
+          <p class="small mt-2" id="modelText" style="line-height:1.7;color:var(--text);"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/ai.js"></script>
+  <script src="assets/js/writing.js"></script>
+</body>
+</html>

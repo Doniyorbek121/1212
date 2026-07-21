@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About & Contact — IELTS Master</title>
+  <meta name="description" content="About IELTS Master and how to get in touch. Learn about our mission to make high-quality IELTS preparation accessible to everyone." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232f6bf6'/><text x='50' y='68' font-size='54' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>iM</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <div class="container page-head">
+    <span class="eyebrow">💙 Our mission</span>
+    <h1>Great IELTS prep, <span class="text-grad">for everyone</span></h1>
+    <p style="max-width:640px;margin:0 auto;">We believe language shouldn't be a barrier to opportunity. IELTS Master makes exam-quality practice free, friendly and effective — wherever you are.</p>
+  </div>
+
+  <div class="container" style="padding-bottom:40px;">
+    <div class="grid grid-3">
+      <div class="card reveal"><div class="ico">🌍</div><h3>Accessible</h3><p>The core platform is free and runs on any device — no expensive courses required.</p></div>
+      <div class="card reveal"><div class="ico">🎯</div><h3>Authentic</h3><p>Real question formats, official-style band conversions and examiner-informed strategies.</p></div>
+      <div class="card reveal"><div class="ico">📈</div><h3>Effective</h3><p>Instant feedback and progress tracking so you always know your next step.</p></div>
+    </div>
+
+    <div class="stats-band reveal mt-3">
+      <div class="grid grid-4">
+        <div class="stat"><b data-count="40" data-suffix="k+">40k+</b><span>Learners</span></div>
+        <div class="stat"><b data-count="150" data-suffix="+">150+</b><span>Countries</span></div>
+        <div class="stat"><b data-count="1200" data-suffix="+">1200+</b><span>Questions</span></div>
+        <div class="stat"><b data-count="4.9">4.9</b><span>Avg rating</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact" style="padding-top:30px;">
+    <div class="container" style="max-width:720px;">
+      <div class="section-head reveal">
+        <span class="eyebrow">✉️ Get in touch</span>
+        <h2>Have a question? <span class="text-grad">Say hello</span></h2>
+        <p>Whether it's about coaching, feedback or a bug — we'd love to hear from you.</p>
+      </div>
+      <div class="panel panel-pad reveal">
+        <form id="contactForm">
+          <div class="calc-grid">
+            <div class="calc-field"><label>Name</label><input class="field" name="name" required placeholder="Your name"></div>
+            <div class="calc-field"><label>Email</label><input class="field" type="email" name="email" required placeholder="you@example.com"></div>
+          </div>
+          <div class="calc-field mt-2"><label>Topic</label>
+            <select class="field" name="topic">
+              <option>General question</option><option>Coaching &amp; pricing</option>
+              <option>Technical issue</option><option>Feedback</option>
+            </select>
+          </div>
+          <div class="calc-field mt-2"><label>Message</label>
+            <textarea class="field" name="message" required style="min-height:130px;" placeholder="How can we help?"></textarea></div>
+          <button class="btn btn-primary btn-lg btn-block mt-3" type="submit">Send message</button>
+          <p class="small muted center mt-2" id="formNote">We usually reply within one business day.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const note = document.getElementById('formNote');
+      const name = this.name.value.trim() || 'there';
+      this.querySelectorAll('input,textarea,select,button').forEach(el => el.disabled = true);
+      note.innerHTML = '✅ Thanks, <b>' + name.replace(/[<>]/g, '') + '</b>! Your message has been received. We\'ll be in touch soon.';
+      note.style.color = 'var(--accent-600)';
+    });
+  </script>
+</body>
+</html>

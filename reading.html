@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IELTS Reading Practice Test — IELTS Master</title>
+  <meta name="description" content="A full interactive IELTS Academic Reading passage with True/False/Not Given, matching and gap-fill questions. Instant band-score feedback." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232f6bf6'/><text x='50' y='68' font-size='54' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>iM</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <div class="container page-head">
+    <div class="breadcrumb"><a href="practice.html">Practice</a> / Reading</div>
+    <span class="eyebrow">📖 Academic Reading</span>
+    <h1>Reading practice test</h1>
+    <p style="max-width:620px;margin:0 auto;">Read the passage, answer all 13 questions, then check your answers for an instant band estimate.</p>
+  </div>
+
+  <div class="container" style="padding-bottom:80px;">
+    <div class="panel panel-pad" style="margin-bottom:20px;">
+      <div class="flex between items-center wrap gap">
+        <div><b>Passage 1</b> · <span class="muted">The Rise of Urban Beekeeping</span></div>
+        <div class="flex items-center gap-sm">
+          <span class="muted small">Recommended time 20:00</span>
+          <span class="timer" id="timer">20:00</span>
+          <button class="btn btn-ghost" id="startTimer">Start timer</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="reading-layout">
+      <!-- PASSAGE -->
+      <div class="panel panel-pad passage">
+        <h3>The Rise of Urban Beekeeping</h3>
+        <p><b>A.</b> In cities across the world, an unexpected form of agriculture is taking root — not in fields, but on rooftops, balconies and in community gardens. Urban beekeeping, once a niche hobby, has grown into a genuine movement. In London alone, the number of registered hives more than tripled between 2008 and 2018, and similar surges have been recorded in Paris, New York and Tokyo.</p>
+        <p><b>B.</b> The appeal is easy to understand. Bees are vital pollinators, responsible for a large share of the fruits and vegetables that reach our tables. As populations of wild bees have declined in many rural areas — largely due to pesticide use and the loss of wildflower habitats — cities have, somewhat surprisingly, become havens. Urban parks and gardens offer a remarkably diverse range of flowering plants, and because domestic gardeners rarely spray industrial pesticides, city bees are often exposed to fewer toxins than their countryside cousins.</p>
+        <p><b>C.</b> Research supports this picture. A study conducted by ecologists found that honey produced in several major cities contained a wider variety of pollen types than honey from surrounding farmland, suggesting a richer and more varied food supply. City bees also benefit from the "urban heat island" effect, in which buildings and paved surfaces trap warmth, extending the flowering season by several weeks compared with the open countryside.</p>
+        <p><b>D.</b> Yet the boom has not been without controversy. Some conservationists warn that placing too many honeybee hives in a small area can create competition for nectar, potentially harming wild bees and other pollinating insects that are already under pressure. They argue that the enthusiasm for keeping honeybees — a managed, domesticated species — should not be confused with genuine biodiversity conservation. Planting more flowers, they suggest, does more good than adding more hives.</p>
+        <p><b>E.</b> Training is another concern. Beekeeping requires knowledge and commitment; a poorly managed hive can spread disease to others nearby. In response, many cities have introduced courses and mentoring schemes, pairing newcomers with experienced keepers. Some municipalities now require registration of hives so that outbreaks of disease can be tracked and contained quickly.</p>
+        <p><b>F.</b> Despite these challenges, the wider benefits are hard to ignore. Beyond honey, urban beekeeping reconnects city dwellers with the natural world and raises awareness of the fragile systems that underpin our food supply. Schools use hives as living classrooms, and businesses install them on rooftops as part of environmental initiatives. For many participants, the reward is not the honey at all, but a renewed sense of responsibility toward the environment they share with millions of tiny, industrious neighbours.</p>
+      </div>
+
+      <!-- QUESTIONS -->
+      <div class="panel panel-pad">
+        <form id="readForm">
+          <b>Questions 1–5</b>
+          <p class="small muted">Do the statements agree with the information in the passage? Choose <b>TRUE</b>, <b>FALSE</b> or <b>NOT GIVEN</b>.</p>
+
+          <div class="q" data-answer="TRUE">
+            <div class="q-text"><span class="q-num">1</span>The number of registered hives in London increased significantly over a ten-year period.</div>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="q1" value="TRUE"> True</label>
+              <label class="opt"><input type="radio" name="q1" value="FALSE"> False</label>
+              <label class="opt"><input type="radio" name="q1" value="NOT GIVEN"> Not Given</label>
+            </div>
+          </div>
+          <div class="q" data-answer="TRUE">
+            <div class="q-text"><span class="q-num">2</span>City bees are often exposed to fewer pesticides than bees in the countryside.</div>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="q2" value="TRUE"> True</label>
+              <label class="opt"><input type="radio" name="q2" value="FALSE"> False</label>
+              <label class="opt"><input type="radio" name="q2" value="NOT GIVEN"> Not Given</label>
+            </div>
+          </div>
+          <div class="q" data-answer="NOT GIVEN">
+            <div class="q-text"><span class="q-num">3</span>Tokyo has more urban hives than any other city in the world.</div>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="q3" value="TRUE"> True</label>
+              <label class="opt"><input type="radio" name="q3" value="FALSE"> False</label>
+              <label class="opt"><input type="radio" name="q3" value="NOT GIVEN"> Not Given</label>
+            </div>
+          </div>
+          <div class="q" data-answer="FALSE">
+            <div class="q-text"><span class="q-num">4</span>The urban heat island effect shortens the flowering season in cities.</div>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="q4" value="TRUE"> True</label>
+              <label class="opt"><input type="radio" name="q4" value="FALSE"> False</label>
+              <label class="opt"><input type="radio" name="q4" value="NOT GIVEN"> Not Given</label>
+            </div>
+          </div>
+          <div class="q" data-answer="TRUE">
+            <div class="q-text"><span class="q-num">5</span>Some experts believe planting flowers is more helpful than adding hives.</div>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="q5" value="TRUE"> True</label>
+              <label class="opt"><input type="radio" name="q5" value="FALSE"> False</label>
+              <label class="opt"><input type="radio" name="q5" value="NOT GIVEN"> Not Given</label>
+            </div>
+          </div>
+
+          <b>Questions 6–9</b>
+          <p class="small muted">Complete each sentence with <b>ONE WORD ONLY</b> from the passage.</p>
+          <div class="q" data-answer="pollinators">
+            <div class="q-text"><span class="q-num">6</span>Bees are described as vital ______ for many fruits and vegetables.</div>
+            <input class="gap-input" name="q6" placeholder="one word" autocomplete="off">
+          </div>
+          <div class="q" data-answer="pollen">
+            <div class="q-text"><span class="q-num">7</span>City honey was found to contain a wider variety of ______ types.</div>
+            <input class="gap-input" name="q7" placeholder="one word" autocomplete="off">
+          </div>
+          <div class="q" data-answer="disease">
+            <div class="q-text"><span class="q-num">8</span>A poorly managed hive can spread ______ to other hives nearby.</div>
+            <input class="gap-input" name="q8" placeholder="one word" autocomplete="off">
+          </div>
+          <div class="q" data-answer="registration">
+            <div class="q-text"><span class="q-num">9</span>Some municipalities require the ______ of hives to track outbreaks.</div>
+            <input class="gap-input" name="q9" placeholder="one word" autocomplete="off">
+          </div>
+
+          <b>Questions 10–13</b>
+          <p class="small muted">Which paragraph (A–F) contains the following information?</p>
+          <div class="q" data-answer="D">
+            <div class="q-text"><span class="q-num">10</span>A warning about competition between honeybees and wild insects.</div>
+            <select class="field" name="q10"><option value="">Choose…</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option></select>
+          </div>
+          <div class="q" data-answer="F">
+            <div class="q-text"><span class="q-num">11</span>Examples of how schools and businesses use hives.</div>
+            <select class="field" name="q11"><option value="">Choose…</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option></select>
+          </div>
+          <div class="q" data-answer="A">
+            <div class="q-text"><span class="q-num">12</span>Statistics showing the growth of urban beekeeping.</div>
+            <select class="field" name="q12"><option value="">Choose…</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option></select>
+          </div>
+          <div class="q" data-answer="E">
+            <div class="q-text"><span class="q-num">13</span>Mentoring schemes that pair beginners with experienced keepers.</div>
+            <select class="field" name="q13"><option value="">Choose…</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option></select>
+          </div>
+
+          <div class="flex gap-sm wrap mt-3">
+            <button type="button" class="btn btn-primary btn-lg" id="checkBtn">Check my answers</button>
+            <button type="button" class="btn btn-ghost btn-lg" id="resetBtn">Reset</button>
+          </div>
+        </form>
+
+        <div class="result-box" id="result">
+          <div class="big text-grad" id="scoreText">0 / 13</div>
+          <div class="band-pill" id="bandPill">Band —</div>
+          <p class="small mt-2" id="resultMsg"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="center mt-3">
+      <a href="listening.html" class="btn btn-ghost">Next: Listening test →</a>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/reading.js"></script>
+</body>
+</html>

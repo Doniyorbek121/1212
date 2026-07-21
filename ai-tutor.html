@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI IELTS Tutor — Powered by Gemini — IELTS Master</title>
+  <meta name="description" content="Chat with an AI IELTS tutor powered by Google Gemini. Ask for feedback, vocabulary, sample answers and study advice using your own API key." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232f6bf6'/><text x='50' y='68' font-size='54' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>iM</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .chat-wrap { display:flex; flex-direction:column; height:60vh; min-height:420px; }
+    .chat-log { flex:1; overflow-y:auto; padding:6px 4px; display:flex; flex-direction:column; gap:14px; }
+    .msg { max-width:82%; padding:13px 16px; border-radius:16px; line-height:1.6; font-size:.97rem; white-space:pre-wrap; }
+    .msg.user { align-self:flex-end; background:linear-gradient(100deg,var(--brand-500),var(--brand-600)); color:#fff; border-bottom-right-radius:4px; }
+    .msg.ai { align-self:flex-start; background:var(--surface-2); color:var(--text); border-bottom-left-radius:4px; }
+    .msg.ai.think { color:var(--text-mut); font-style:italic; }
+    .chat-input { display:flex; gap:10px; margin-top:14px; }
+    .chat-input textarea { flex:1; resize:none; min-height:52px; max-height:140px; }
+    .chips { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+    .chip { padding:8px 13px; border-radius:999px; border:1px solid var(--border); background:var(--surface); font-size:.85rem; font-weight:600; color:var(--text-soft); cursor:pointer; transition:.18s; }
+    .chip:hover { border-color:var(--brand-400); color:var(--brand-600); }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <div class="container page-head">
+    <span class="eyebrow">🤖 Powered by Google Gemini</span>
+    <h1>Your personal <span class="text-grad">AI IELTS tutor</span></h1>
+    <p style="max-width:640px;margin:0 auto;">Ask anything — get feedback on your writing, model answers, vocabulary, grammar fixes and a study plan. Bring your own Gemini API key; it stays in your browser.</p>
+  </div>
+
+  <div class="container" style="padding-bottom:80px;max-width:900px;">
+    <!-- API KEY PANEL -->
+    <div class="panel panel-pad" id="keyPanel" style="margin-bottom:18px;"></div>
+
+    <!-- CHAT -->
+    <div class="panel panel-pad">
+      <div class="chips" id="chips">
+        <span class="chip" data-p="Give me 10 advanced C1 vocabulary words for the topic of 'environment', each with a short definition and an example sentence.">🌱 Advanced vocabulary</span>
+        <span class="chip" data-p="Ask me one IELTS Speaking Part 1 question, wait for my answer, and then give feedback.">🗣️ Speaking practice</span>
+        <span class="chip" data-p="Give me a Band 9 sample answer for this Task 2 question: 'Some people think children should start school at a very early age. Do the advantages outweigh the disadvantages?'">✍️ Model essay</span>
+        <span class="chip" data-p="Create a 4-week study plan to go from Band 6 to Band 7.5, with daily tasks.">🗓️ Study plan</span>
+      </div>
+
+      <div class="chat-wrap">
+        <div class="chat-log" id="chatLog"></div>
+        <div class="chat-input">
+          <textarea class="field" id="chatBox" placeholder="Ask your IELTS tutor anything…"></textarea>
+          <button class="btn btn-primary" id="sendBtn">Send</button>
+        </div>
+        <p class="small muted mt-2 mb-0">⚠️ AI feedback is a helpful guide, not an official examiner score. Your API key and messages go directly to Google — never to us.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/ai.js"></script>
+  <script src="assets/js/tutor.js"></script>
+</body>
+</html>

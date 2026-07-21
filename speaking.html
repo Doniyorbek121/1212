@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IELTS Speaking Practice — Cue Cards & Questions — IELTS Master</title>
+  <meta name="description" content="Practise all three parts of the IELTS Speaking test with real questions, cue cards and a built-in preparation and talk timer." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232f6bf6'/><text x='50' y='68' font-size='54' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>iM</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <div class="container page-head">
+    <div class="breadcrumb"><a href="practice.html">Practice</a> / Speaking</div>
+    <span class="eyebrow">🗣️ Speaking</span>
+    <h1>Speaking practice</h1>
+    <p style="max-width:640px;margin:0 auto;">Rehearse Parts 1–3. For Part 2, take one minute to prepare, then speak for two — just like the real interview.</p>
+  </div>
+
+  <div class="container" style="padding-bottom:80px;">
+    <div class="tabs" id="partTabs">
+      <button class="tab active" data-part="p1">Part 1 — Interview</button>
+      <button class="tab" data-part="p2">Part 2 — Cue card</button>
+      <button class="tab" data-part="p3">Part 3 — Discussion</button>
+    </div>
+
+    <!-- PART 1 / 3 -->
+    <div class="panel panel-pad" id="qPanel">
+      <div class="flex between items-center wrap gap">
+        <h3 class="mb-0" id="partTitle">Part 1 — Everyday questions</h3>
+        <button class="btn btn-ghost" id="newQ">Shuffle question →</button>
+      </div>
+      <p class="mt-3" id="qText" style="font-size:1.25rem;color:var(--text);font-weight:700;"></p>
+      <p class="small muted" id="qTip"></p>
+      <button class="btn btn-primary" id="speakQ">🔊 Hear the question</button>
+    </div>
+
+    <!-- PART 2 CUE CARD -->
+    <div id="cuePanel" style="display:none;">
+      <div class="cue-card">
+        <div class="tag">Part 2 · Long turn</div>
+        <h3 style="margin:12px 0 6px;" id="cueTitle"></h3>
+        <p class="small muted mb-0">You should say:</p>
+        <ul id="cuePoints"></ul>
+      </div>
+
+      <div class="panel panel-pad mt-3">
+        <div class="flex between items-center wrap gap">
+          <div>
+            <div class="tag" id="phaseTag">Ready</div>
+            <div class="timer" id="cueTimer" style="font-size:2.6rem;margin-top:6px;">1:00</div>
+          </div>
+          <div class="flex gap-sm wrap">
+            <button class="btn btn-primary" id="prepBtn">Start 1-min prep</button>
+            <button class="btn btn-accent" id="talkBtn">Start 2-min talk</button>
+            <button class="btn btn-ghost" id="cueReset">Reset</button>
+            <button class="btn btn-ghost" id="newCue">New cue card</button>
+          </div>
+        </div>
+        <div class="bar mt-3" style="height:8px;"><i id="cueBar" style="width:0%"></i></div>
+      </div>
+    </div>
+
+    <div class="center mt-3">
+      <a href="vocabulary.html" class="btn btn-ghost">Next: Vocabulary →</a>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/speaking.js"></script>
+</body>
+</html>

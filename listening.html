@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IELTS Listening Practice Test — IELTS Master</title>
+  <meta name="description" content="Interactive IELTS Listening practice with real audio playback, note completion and multiple-choice questions plus instant scoring." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232f6bf6'/><text x='50' y='68' font-size='54' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>iM</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <div class="container page-head">
+    <div class="breadcrumb"><a href="practice.html">Practice</a> / Listening</div>
+    <span class="eyebrow">🎧 Listening · Section 1</span>
+    <h1>Listening practice test</h1>
+    <p style="max-width:640px;margin:0 auto;">Press play to hear the recording (it plays once, like the real exam), fill in the answers, then check your score.</p>
+  </div>
+
+  <div class="container" style="padding-bottom:80px;">
+    <!-- Audio player -->
+    <div class="panel panel-pad" style="margin-bottom:22px;">
+      <div class="flex between items-center wrap gap">
+        <div>
+          <b>🔊 Recording — Accommodation Enquiry</b>
+          <p class="small muted mb-0">Uses your browser's speech engine. Wear headphones for the best experience.</p>
+        </div>
+        <div class="flex gap-sm items-center">
+          <button class="btn btn-primary" id="playBtn">▶ Play</button>
+          <button class="btn btn-ghost" id="stopBtn">■ Stop</button>
+          <span class="muted small" id="audioStatus">Ready</span>
+        </div>
+      </div>
+      <div class="bar mt-2" style="height:6px;"><i id="audioBar" style="width:0%"></i></div>
+      <details class="mt-2"><summary class="small muted" style="cursor:pointer;">Show transcript (after you've tried)</summary>
+        <p class="small mt-2" id="transcriptText" style="line-height:1.7;"></p>
+      </details>
+    </div>
+
+    <div class="panel panel-pad">
+      <form id="listenForm">
+        <b>Questions 1–6</b>
+        <p class="small muted">Complete the notes. Write <b>NO MORE THAN TWO WORDS AND/OR A NUMBER</b> for each answer.</p>
+        <div class="panel" style="background:var(--surface-2);padding:22px;border-radius:12px;">
+          <h3 style="margin-bottom:14px;">Sunnydale Student Housing — Enquiry Form</h3>
+          <div class="q" data-answer="Thompson">
+            <div class="q-text"><span class="q-num">1</span>Surname: ______</div>
+            <input class="gap-input" name="q1" placeholder="type answer" autocomplete="off">
+          </div>
+          <div class="q" data-answer="Maple">
+            <div class="q-text"><span class="q-num">2</span>Preferred area: near ______ Street</div>
+            <input class="gap-input" name="q2" placeholder="type answer" autocomplete="off">
+          </div>
+          <div class="q" data-answer="450">
+            <div class="q-text"><span class="q-num">3</span>Maximum monthly budget: £______</div>
+            <input class="gap-input" name="q3" placeholder="a number" autocomplete="off">
+          </div>
+          <div class="q" data-answer="September">
+            <div class="q-text"><span class="q-num">4</span>Move-in month: ______</div>
+            <input class="gap-input" name="q4" placeholder="type answer" autocomplete="off">
+          </div>
+          <div class="q" data-answer="parking">
+            <div class="q-text"><span class="q-num">5</span>Essential feature required: ______</div>
+            <input class="gap-input" name="q5" placeholder="type answer" autocomplete="off">
+          </div>
+          <div class="q" data-answer="Friday">
+            <div class="q-text"><span class="q-num">6</span>Viewing arranged for: ______</div>
+            <input class="gap-input" name="q6" placeholder="a day" autocomplete="off">
+          </div>
+        </div>
+
+        <b class="mt-3" style="display:block;">Questions 7–10</b>
+        <p class="small muted">Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.</p>
+        <div class="q" data-answer="B">
+          <div class="q-text"><span class="q-num">7</span>The deposit is equal to</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="q7" value="A"> A. two weeks' rent</label>
+            <label class="opt"><input type="radio" name="q7" value="B"> B. one month's rent</label>
+            <label class="opt"><input type="radio" name="q7" value="C"> C. six weeks' rent</label>
+          </div>
+        </div>
+        <div class="q" data-answer="C">
+          <div class="q-text"><span class="q-num">8</span>The apartment includes bills for</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="q8" value="A"> A. electricity only</label>
+            <label class="opt"><input type="radio" name="q8" value="B"> B. nothing</label>
+            <label class="opt"><input type="radio" name="q8" value="C"> C. water and internet</label>
+          </div>
+        </div>
+        <div class="q" data-answer="A">
+          <div class="q-text"><span class="q-num">9</span>Pets are</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="q9" value="A"> A. not allowed</label>
+            <label class="opt"><input type="radio" name="q9" value="B"> B. allowed with a fee</label>
+            <label class="opt"><input type="radio" name="q9" value="C"> C. only cats allowed</label>
+          </div>
+        </div>
+        <div class="q" data-answer="B">
+          <div class="q-text"><span class="q-num">10</span>The nearest bus stop is</div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="q10" value="A"> A. next to the building</label>
+            <label class="opt"><input type="radio" name="q10" value="B"> B. a five-minute walk away</label>
+            <label class="opt"><input type="radio" name="q10" value="C"> C. across from the campus</label>
+          </div>
+        </div>
+
+        <div class="flex gap-sm wrap mt-3">
+          <button type="button" class="btn btn-primary btn-lg" id="checkBtn">Check my answers</button>
+          <button type="button" class="btn btn-ghost btn-lg" id="resetBtn">Reset</button>
+        </div>
+      </form>
+
+      <div class="result-box" id="result">
+        <div class="big text-grad" id="scoreText">0 / 10</div>
+        <div class="band-pill" id="bandPill">Band —</div>
+        <p class="small mt-2" id="resultMsg"></p>
+      </div>
+    </div>
+
+    <div class="center mt-3">
+      <a href="writing.html" class="btn btn-ghost">Next: Writing lab →</a>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/listening.js"></script>
+</body>
+</html>
