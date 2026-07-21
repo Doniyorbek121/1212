@@ -10,16 +10,23 @@ Inspired by sites like ielts.gg, but with an original design system, richer inte
 |--------|--------------|
 | **Home** | Modern landing page with hero, features, pricing, testimonials, FAQ |
 | **Courses** | Strategy lessons for all four skills |
-| **Reading** | Full Academic passage, 13 self-marking questions (TFNG, gap-fill, matching), timer, band estimate |
-| **Listening** | Section 1 with **real audio playback** (browser speech synthesis), note completion + MCQs |
+| **Reading** | **Full mock library** — multiple 3-passage / 40-question tests, every question type, 60-min timer, per-passage breakdown, official band curve |
+| **Listening** | **Full mock library** — multiple 4-section / 40-question tests with **real audio playback** (speech synthesis) and per-section scoring |
 | **Writing** | Task 1 & 2 prompts, live word/sentence counter, band-9 model answers, **AI feedback** |
-| **Speaking** | Parts 1–3 questions, Part 2 cue cards, prep/talk timer, spoken questions |
+| **Speaking** | Parts 1–3 questions, cue cards, prep/talk timer, **microphone recording**, **speech-to-text dictation** and AI feedback |
+| **Dashboard** | Band-trend SVG chart, KPIs, skill breakdown, study-goal tracking, full test history & day-streak |
 | **AI Tutor** | Chat with a Gemini-powered IELTS tutor (bring your own API key) |
 | **Vocabulary** | Interactive flashcards across 5 topics with pronunciation |
 | **Band Calculator** | Overall band (official rounding) + raw-score → band conversion |
+| **Resources** | Study plans, essay templates, linking-word banks, grammar & time-management guides |
 | **About / Contact** | Mission page and a working contact form |
 
-Extras: light/dark theme (persisted), progress tracking (localStorage), scroll animations, animated counters, fully responsive, keyboard shortcuts, accessible markup.
+Extras: light/dark theme (persisted), **installable PWA with offline support**, progress tracking & history (localStorage), SEO (Open Graph, Twitter cards, JSON-LD, sitemap, robots.txt), a custom 404 page, scroll animations, animated counters, fully responsive, keyboard shortcuts, accessible markup.
+
+### Adding more tests
+Reading and Listening are data-driven. To add another mock, append an entry to
+`window.READING_TESTS` in `assets/js/reading-data.js` (or `window.LISTENING_TESTS`
+in `assets/js/listening-data.js`) — the selector and grading engine pick it up automatically.
 
 ## 🤖 Gemini AI setup
 

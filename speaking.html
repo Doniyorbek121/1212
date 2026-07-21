@@ -81,7 +81,11 @@
       <div class="flex between items-center"><h3 class="mb-0">🤖 AI feedback on your answer</h3><span class="tag">Gemini</span></div>
       <p class="small muted">Type (or paste) what you said, and the AI examiner will estimate your band and suggest improvements.</p>
       <div id="aiKeyPanel" class="mt-2"></div>
-      <textarea class="field mt-2" id="speakText" style="min-height:110px;" placeholder="Type your spoken answer here…"></textarea>
+      <div class="flex gap-sm items-center mt-2 wrap">
+        <button class="btn btn-ghost" id="dictateBtn">🎤 Dictate answer</button>
+        <span class="muted small" id="dictateStatus"></span>
+      </div>
+      <textarea class="field mt-2" id="speakText" style="min-height:110px;" placeholder="Type your answer, or use ‘Dictate’ to speak it…"></textarea>
       <button class="btn btn-accent mt-2" id="speakAiBtn">Get AI feedback</button>
       <div id="speakFeedback" class="mt-2" style="white-space:pre-wrap;line-height:1.65;color:var(--text);"></div>
     </div>

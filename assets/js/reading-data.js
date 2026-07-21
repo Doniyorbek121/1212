@@ -1,6 +1,10 @@
-/* Full IELTS Academic Reading test data — 3 passages, 40 questions.
-   Question types: tfng, yynn, mcq, gap (ONE/TWO words), match, heading. */
-window.READING_TEST = [
+/* IELTS Academic Reading test library.
+   window.READING_TESTS = [ { name, passages:[...] }, ... ]
+   Question types: tfng, yynn, mcq, gap, match. */
+window.READING_TESTS = [
+  {
+    name: 'Test 1 — Nature & Science',
+    passages: [
   {
     title: 'The Rise of Urban Beekeeping',
     intro: 'You should spend about 20 minutes on Questions 1–13.',
@@ -37,7 +41,6 @@ window.READING_TEST = [
         ] },
     ],
   },
-
   {
     title: 'The Science of Sleep',
     intro: 'You should spend about 20 minutes on Questions 14–26.',
@@ -74,7 +77,6 @@ window.READING_TEST = [
         ] },
     ],
   },
-
   {
     title: 'The Return of the Wolf',
     intro: 'You should spend about 20 minutes on Questions 27–40.',
@@ -114,6 +116,127 @@ window.READING_TEST = [
           { n: 39, text: 'With stable vegetation, river ______ became narrower.', a: 'channels' },
           { n: 40, text: 'The passage describes predators as active ______ of ecosystems.', a: 'architects' },
         ] },
+    ],
+  },
+    ],
+  },
+
+  {
+    name: 'Test 2 — Society & History',
+    passages: [
+  {
+    title: 'The Story of Coffee',
+    intro: 'You should spend about 20 minutes on Questions 1–13.',
+    paras: [
+      ['A', "Few drinks have shaped human society as profoundly as coffee. According to a popular legend, its stimulating powers were first noticed in the highlands of Ethiopia, where a goat herder observed that his animals became unusually lively after eating the bright red berries of a certain shrub. Whether or not the tale is true, coffee did originate in this region before spreading, over several centuries, across the entire globe."],
+      ['B', "By the fifteenth century, coffee was being cultivated and traded in Yemen, on the southern edge of the Arabian Peninsula. It was here that the drink took on the form we would recognise today: the beans were roasted and ground before being brewed. The port city of Mocha became so closely associated with the trade that its name is still used for a type of coffee. From Arabia, coffee travelled to the great cities of the Ottoman Empire, where the first coffee houses opened."],
+      ['C', "These coffee houses were far more than places to drink. They became centres of conversation, business and debate, earning the nickname 'schools of the wise'. When coffee reached Europe in the seventeenth century, a similar phenomenon occurred. London's coffee houses buzzed with merchants, writers and politicians; some even gave rise to famous institutions, as the insurance market Lloyd's of London began life in a coffee house near the river Thames."],
+      ['D', "Not everyone welcomed the new drink. Some religious and political authorities viewed the lively gatherings with suspicion, fearing that they encouraged idleness or dangerous ideas, and attempts were occasionally made to close the coffee houses down. Such bans rarely lasted long, however, as the popularity of coffee proved impossible to suppress."],
+      ['E', "As demand soared, European powers established coffee plantations in their colonies, from the Caribbean to Southeast Asia. This expansion had a darker side, as much of the labour on these plantations was forced, and the history of coffee is therefore bound up with that of the colonial economy. Today, coffee is grown in a broad band around the equator and is one of the most valuable agricultural commodities in the world."],
+      ['F', "Modern coffee culture continues to evolve. The rise of large international chains standardised the experience in the late twentieth century, but recent years have seen a renewed interest in the origins and quality of the beans, sometimes called the 'third wave'. For millions of people, the simple act of drinking a cup of coffee connects them, often unknowingly, to a story that spans continents and centuries."],
+    ],
+    groups: [
+      { instr: 'Questions 1–5 — Do the statements agree with the information? Choose TRUE, FALSE or NOT GIVEN.', type: 'tfng',
+        qs: [
+          { n: 1, text: 'Coffee is believed to have originated in Ethiopia.', a: 'TRUE' },
+          { n: 2, text: 'The city of Mocha gave its name to a type of coffee.', a: 'TRUE' },
+          { n: 3, text: 'Coffee houses in London were more popular than those in Arabia.', a: 'NOT GIVEN' },
+          { n: 4, text: 'All attempts to ban coffee houses were permanently successful.', a: 'FALSE' },
+          { n: 5, text: 'Coffee is grown mainly in regions near the equator.', a: 'TRUE' },
+        ] },
+      { instr: 'Questions 6–9 — Complete each sentence with ONE WORD ONLY from the passage.', type: 'gap',
+        qs: [
+          { n: 6, text: 'A goat ______ is said to have first noticed the effects of the berries.', a: 'herder' },
+          { n: 7, text: 'In Yemen the beans were roasted and ______ before brewing.', a: 'ground' },
+          { n: 8, text: 'Coffee houses were nicknamed schools of the ______.', a: 'wise' },
+          { n: 9, text: 'The insurance market ______ of London began in a coffee house.', a: "Lloyd's" },
+        ] },
+      { instr: 'Questions 10–13 — Which paragraph (A–F) contains the following information?', type: 'match', options: ['A','B','C','D','E','F'],
+        qs: [
+          { n: 10, text: 'A reference to opposition to coffee houses.', a: 'D' },
+          { n: 11, text: 'A description of a recent trend in coffee culture.', a: 'F' },
+          { n: 12, text: 'A mention of the link between coffee and colonial labour.', a: 'E' },
+          { n: 13, text: 'A well-known legend about the discovery of coffee.', a: 'A' },
+        ] },
+    ],
+  },
+  {
+    title: 'How Cities Cope with Heat',
+    intro: 'You should spend about 20 minutes on Questions 14–26.',
+    paras: [
+      ['A', "As summers grow hotter, cities face a problem that the surrounding countryside largely escapes. Dense concentrations of concrete, asphalt and brick absorb heat during the day and release it slowly at night, so that urban areas can be several degrees warmer than nearby rural land. This phenomenon, known as the urban heat island, can turn a warm day into a dangerous one, particularly for the elderly and the very young."],
+      ['B', "The causes are well understood. Dark surfaces such as roads and rooftops absorb far more solar energy than fields or forests. The lack of vegetation means there is little shade and little cooling from the evaporation of water through leaves. Waste heat from vehicles, air conditioners and industry adds further warmth, and tall buildings can trap this heat by blocking the flow of air through streets."],
+      ['C', "Fortunately, planners have a growing toolkit of solutions. One of the simplest is to increase the amount of greenery. Parks, street trees and even small gardens lower local temperatures through shade and evaporation. Studies have found that a well-shaded street can be noticeably cooler than a bare one only a short distance away, and that access to green space also brings clear benefits for mental health."],
+      ['D', "Another approach targets the surfaces themselves. Painting roofs white, or covering them with reflective materials, can dramatically reduce the amount of heat a building absorbs. So-called 'cool pavements', made from lighter-coloured materials, achieve a similar effect at street level. Some cities have begun installing 'green roofs', in which a layer of soil and plants covers the top of a building, providing both cooling and insulation."],
+      ['E', "Water, too, has a role to play. Fountains, ponds and canals cool the air around them, and some cities are reopening rivers that were once buried beneath roads. Traditional designs from hot climates, such as narrow shaded streets and buildings arranged to catch breezes, are also being rediscovered by modern architects seeking low-energy ways to keep people comfortable."],
+      ['F', "No single measure is a complete answer. The most effective strategies combine many approaches — more trees, cooler surfaces, better building design and the clever use of water. As heatwaves become more frequent, the ability of a city to stay cool is likely to become an increasingly important measure of how well it serves the people who live in it."],
+    ],
+    groups: [
+      { instr: 'Questions 14–17 — Choose the correct letter, A, B or C.', type: 'mcq',
+        qs: [
+          { n: 14, text: 'The urban heat island effect means that cities are', a: 'A',
+            options: ['A. warmer than nearby rural areas.', 'B. cooler at night than in the day.', 'C. the same temperature as the countryside.'] },
+          { n: 15, text: 'One cause of the effect is that dark surfaces', a: 'B',
+            options: ['A. reflect solar energy.', 'B. absorb a lot of solar energy.', 'C. produce their own heat.'] },
+          { n: 16, text: 'According to the passage, green space also improves', a: 'C',
+            options: ['A. air quality only.', 'B. traffic flow.', 'C. mental health.'] },
+          { n: 17, text: 'A green roof provides cooling and', a: 'A',
+            options: ['A. insulation.', 'B. extra parking.', 'C. drinking water.'] },
+        ] },
+      { instr: 'Questions 18–22 — Complete the summary with ONE WORD ONLY from the passage.', type: 'gap',
+        qs: [
+          { n: 18, text: 'The heat island effect is especially dangerous for the ______ and the young.', a: 'elderly' },
+          { n: 19, text: 'A lack of ______ means there is little shade in cities.', a: 'vegetation' },
+          { n: 20, text: 'Painting roofs ______ reduces how much heat a building absorbs.', a: 'white' },
+          { n: 21, text: 'Cool ______ are made from lighter-coloured materials.', a: 'pavements' },
+          { n: 22, text: 'Some cities are reopening ______ that were buried under roads.', a: 'rivers' },
+        ] },
+      { instr: 'Questions 23–26 — Which paragraph (A–F) contains the following information?', type: 'match', options: ['A','B','C','D','E','F'],
+        qs: [
+          { n: 23, text: 'The idea that combining several methods works best.', a: 'F' },
+          { n: 24, text: 'The use of traditional architecture from hot regions.', a: 'E' },
+          { n: 25, text: 'An explanation of why tall buildings worsen the problem.', a: 'B' },
+          { n: 26, text: 'The benefits of adding more trees and parks.', a: 'C' },
+        ] },
+    ],
+  },
+  {
+    title: 'The Printing Revolution',
+    intro: 'You should spend about 20 minutes on Questions 27–40.',
+    paras: [
+      ['A', "Before the middle of the fifteenth century, every book in Europe was copied by hand. The task was slow, expensive and prone to error, and as a result books were rare and precious objects, owned mainly by monasteries, universities and the very wealthy. The invention that changed this, and with it the course of history, is usually credited to Johannes Gutenberg, a goldsmith working in the German city of Mainz."],
+      ['B', "Gutenberg's genius lay not in a single idea but in combining several. Printing from carved wooden blocks was already known, but it was inflexible. His innovation was 'movable type': individual letters, cast in metal, that could be arranged to form a page, used to print many copies, and then rearranged for the next page. Combined with a suitable oil-based ink and a press adapted from those used for making wine, this system made it possible to produce books in large numbers for the first time."],
+      ['C', "The effects were dramatic. Within fifty years of Gutenberg's Bible, printed around 1455, presses had been established in cities across Europe, and millions of books had been produced. The price of books fell steeply, and reading, once the preserve of a small elite, spread to a much wider public. Ideas could now travel faster and further than ever before, no longer dependent on the slow copying of a single scribe."],
+      ['D', "This new speed had powerful consequences. Scholars could compare texts and build on one another's work more easily, accelerating scientific enquiry. Religious reformers used the press to spread their arguments widely, and the movement they began spread with a rapidity that would have been impossible in an age of hand-copied manuscripts. Governments and churches, alarmed at this loss of control over information, sometimes tried to censor what was printed — with only limited success."],
+      ['E', "Printing also helped to standardise languages. When texts in a regional dialect were printed and read across a whole country, that dialect tended to become the accepted written form, gradually pushing aside rival versions. In this way the press contributed to the sense of shared national identity that developed in many European countries over the following centuries."],
+      ['F', "Historians often compare the arrival of printing to the arrival of the internet in our own time: both dramatically lowered the cost of copying and sharing information, and both unleashed changes that their inventors could never have foreseen. Whether the comparison is exact or not, few would deny that Gutenberg's workshop set in motion one of the great transformations of the modern world."],
+    ],
+    groups: [
+      { instr: 'Questions 27–31 — Do the statements agree with the passage? Choose TRUE, FALSE or NOT GIVEN.', type: 'tfng',
+        qs: [
+          { n: 27, text: 'Before printing, books in Europe were copied by hand.', a: 'TRUE' },
+          { n: 28, text: 'Printing from wooden blocks was unknown before Gutenberg.', a: 'FALSE' },
+          { n: 29, text: 'Gutenberg\'s press was adapted from wine-making presses.', a: 'TRUE' },
+          { n: 30, text: 'Gutenberg became wealthy from his invention.', a: 'NOT GIVEN' },
+          { n: 31, text: 'Printing made books cheaper and more widely available.', a: 'TRUE' },
+        ] },
+      { instr: 'Questions 32–36 — Complete the notes with ONE WORD ONLY from the passage.', type: 'gap',
+        qs: [
+          { n: 32, text: 'Gutenberg worked as a ______ in Mainz.', a: 'goldsmith' },
+          { n: 33, text: 'His key innovation was movable ______.', a: 'type' },
+          { n: 34, text: 'The letters were cast in ______.', a: 'metal' },
+          { n: 35, text: 'Faster sharing of ideas accelerated scientific ______.', a: 'enquiry' },
+          { n: 36, text: 'Printing helped to ______ regional languages.', a: 'standardise' },
+        ] },
+      { instr: 'Questions 37–40 — Which paragraph (A–F) contains the following information?', type: 'match', options: ['A','B','C','D','E','F'],
+        qs: [
+          { n: 37, text: 'A comparison between printing and the internet.', a: 'F' },
+          { n: 38, text: 'How printing affected national languages and identity.', a: 'E' },
+          { n: 39, text: 'An explanation of what movable type actually was.', a: 'B' },
+          { n: 40, text: 'Attempts by authorities to control printed material.', a: 'D' },
+        ] },
+    ],
+  },
     ],
   },
 ];

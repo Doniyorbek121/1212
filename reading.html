@@ -23,7 +23,10 @@
     <!-- control bar -->
     <div class="panel panel-pad" style="margin-bottom:18px;position:sticky;top:76px;z-index:40;">
       <div class="flex between items-center wrap gap">
-        <div class="tabs" id="passageTabs" style="margin-bottom:0;"></div>
+        <div class="flex items-center gap-sm wrap">
+          <select class="field" id="testSelector" style="max-width:210px;padding:9px 12px;"></select>
+          <div class="tabs" id="passageTabs" style="margin-bottom:0;"></div>
+        </div>
         <div class="flex items-center gap-sm">
           <span class="muted small">Answered <b id="answeredCount">0</b>/40</span>
           <span class="timer" id="timer">60:00</span>

@@ -32,7 +32,7 @@
     ['dashboard.html', 'Dashboard'],
     ['ai-tutor.html', 'AI Tutor'],
     ['vocabulary.html', 'Vocabulary'],
-    ['calculator.html', 'Band Score'],
+    ['resources.html', 'Resources'],
     ['about.html', 'About'],
   ];
 
@@ -57,6 +57,7 @@
             <li class="nav-cta-mobile" style="margin-top:8px;"><a href="practice.html" class="btn btn-primary btn-block">Start practising</a></li>
           </ul>
           <div class="nav-right">
+            <button class="btn btn-ghost hide-sm" id="installBtn" style="display:none;">⬇ Install app</button>
             <button class="icon-btn" data-theme-icon onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             <a href="practice.html" class="btn btn-primary hide-sm">Start free</a>
             <button class="icon-btn nav-toggle" id="navToggle" aria-label="Menu">☰</button>
@@ -109,12 +110,13 @@
               </ul>
             </div>
             <div>
-              <h4>Company</h4>
+              <h4>More</h4>
               <ul>
+                <li><a href="resources.html">Tips &amp; resources</a></li>
+                <li><a href="dashboard.html">My dashboard</a></li>
+                <li><a href="calculator.html">Band calculator</a></li>
                 <li><a href="about.html">About us</a></li>
                 <li><a href="about.html#contact">Contact</a></li>
-                <li><a href="calculator.html">Band calculator</a></li>
-                <li><a href="vocabulary.html">Vocabulary</a></li>
               </ul>
             </div>
           </div>
@@ -184,6 +186,53 @@
     if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
       navigator.serviceWorker.register('sw.js').catch(() => {});
     }
+    // install prompt
+    let deferred = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault(); deferred = e;
+      const btn = document.getElementById('installBtn');
+      if (btn) {
+        btn.style.display = '';
+        btn.addEventListener('click', async () => {
+          if (!deferred) return;
+          deferred.prompt();
+          await deferred.userChoice;
+          deferred = null; btn.style.display = 'none';
+        });
+      }
+    });
+  }
+
+  /* ---- SEO: Open Graph, Twitter card, canonical, structured data ---- */
+  function initSEO() {
+    const head = document.head;
+    const desc = (document.querySelector('meta[name="description"]') || {}).content || 'Prepare for IELTS with real practice tests, band scores and an AI tutor.';
+    const title = document.title;
+    function meta(attr, key, val) {
+      if (head.querySelector(`meta[${attr}="${key}"]`)) return;
+      const m = document.createElement('meta'); m.setAttribute(attr, key); m.content = val; head.appendChild(m);
+    }
+    meta('property', 'og:title', title);
+    meta('property', 'og:description', desc);
+    meta('property', 'og:type', 'website');
+    meta('property', 'og:site_name', 'IELTS Master');
+    meta('name', 'twitter:card', 'summary_large_image');
+    meta('name', 'twitter:title', title);
+    meta('name', 'twitter:description', desc);
+    if (!head.querySelector('link[rel="canonical"]')) {
+      const l = document.createElement('link'); l.rel = 'canonical'; l.href = location.href.split('#')[0]; head.appendChild(l);
+    }
+    if (!document.getElementById('ld-json')) {
+      const s = document.createElement('script'); s.type = 'application/ld+json'; s.id = 'ld-json';
+      s.textContent = JSON.stringify({
+        '@context': 'https://schema.org', '@type': 'EducationalOrganization',
+        name: 'IELTS Master',
+        description: 'A complete IELTS preparation platform with practice tests, band-score tools and an AI tutor.',
+        educationalCredentialAwarded: 'IELTS preparation',
+        sameAs: [],
+      });
+      head.appendChild(s);
+    }
   }
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -193,5 +242,6 @@
     initFaq();
     initCounters();
     initPWA();
+    initSEO();
   });
 })();

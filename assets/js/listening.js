@@ -1,9 +1,10 @@
 /* Full Listening test engine — 4 sections, audio via speech synthesis, grading */
 (function () {
   'use strict';
-  const TEST = window.LISTENING_TEST;
+  const TESTS = window.LISTENING_TESTS || (window.LISTENING_TEST ? [{ name: 'Test 1', sections: window.LISTENING_TEST }] : null);
   const wrap = document.getElementById('sections');
-  if (!TEST || !wrap) return;
+  if (!TESTS || !wrap) return;
+  let TEST = TESTS[0].sections;
 
   const synth = window.speechSynthesis;
   let voice = null;
@@ -50,11 +51,28 @@
       <div class="panel panel-pad">${groups}</div></div>`;
   }
 
-  wrap.innerHTML = TEST.map(sectionHtml).join('');
-
-  // tabs
   const tabs = document.getElementById('sectionTabs');
-  tabs.innerHTML = TEST.map((s, i) => `<button class="tab ${i === 0 ? 'active' : ''}" data-s="${i}">Section ${i + 1}</button>`).join('');
+
+  function renderTest() {
+    if (synth) synth.cancel();
+    wrap.innerHTML = TEST.map(sectionHtml).join('');
+    tabs.innerHTML = TEST.map((s, i) => `<button class="tab ${i === 0 ? 'active' : ''}" data-s="${i}">Section ${i + 1}</button>`).join('');
+    document.getElementById('answeredCount').textContent = '0';
+    document.getElementById('result').classList.remove('show');
+  }
+  renderTest();
+
+  // test selector
+  const selector = document.getElementById('testSelector');
+  if (selector && TESTS.length > 1) {
+    selector.innerHTML = TESTS.map((t, i) => `<option value="${i}">${t.name}</option>`).join('');
+    selector.addEventListener('change', () => {
+      TEST = TESTS[+selector.value].sections;
+      renderTest();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   tabs.addEventListener('click', (e) => {
     const b = e.target.closest('.tab'); if (!b) return;
     if (synth) synth.cancel();
@@ -160,6 +178,8 @@
     if (a < 40 && !confirm(`You've answered ${a}/40. Submit anyway?`)) return;
     grade();
   });
-  document.getElementById('retryBtn').addEventListener('click', () => location.reload());
+  document.getElementById('retryBtn').addEventListener('click', () => {
+    renderTest(); window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
   window.addEventListener('beforeunload', () => { if (synth) synth.cancel(); });
 })();

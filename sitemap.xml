@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace the loc paths with your deployed absolute URLs (e.g. https://your-domain.com/index.html) if you host this site. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>index.html</loc><priority>1.0</priority></url>
+  <url><loc>courses.html</loc><priority>0.8</priority></url>
+  <url><loc>practice.html</loc><priority>0.9</priority></url>
+  <url><loc>dashboard.html</loc><priority>0.7</priority></url>
+  <url><loc>reading.html</loc><priority>0.9</priority></url>
+  <url><loc>listening.html</loc><priority>0.9</priority></url>
+  <url><loc>writing.html</loc><priority>0.9</priority></url>
+  <url><loc>speaking.html</loc><priority>0.9</priority></url>
+  <url><loc>ai-tutor.html</loc><priority>0.8</priority></url>
+  <url><loc>vocabulary.html</loc><priority>0.8</priority></url>
+  <url><loc>calculator.html</loc><priority>0.7</priority></url>
+  <url><loc>resources.html</loc><priority>0.7</priority></url>
+  <url><loc>about.html</loc><priority>0.6</priority></url>
+</urlset>

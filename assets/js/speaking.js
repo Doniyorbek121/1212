@@ -174,5 +174,32 @@
     });
   }
 
+  /* ---- Speech-to-text dictation (Web Speech API) ---- */
+  const dictateBtn = document.getElementById('dictateBtn');
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (dictateBtn && SR) {
+    const status = document.getElementById('dictateStatus');
+    const target = document.getElementById('speakText');
+    let recog = null, listening = false, base = '';
+    dictateBtn.addEventListener('click', () => {
+      if (listening) { recog && recog.stop(); return; }
+      recog = new SR();
+      recog.lang = 'en-GB'; recog.continuous = true; recog.interimResults = true;
+      base = target.value ? target.value.trim() + ' ' : '';
+      recog.onstart = () => { listening = true; dictateBtn.textContent = '■ Stop dictation'; status.textContent = '● Listening — speak now'; };
+      recog.onresult = (e) => {
+        let txt = '';
+        for (let i = 0; i < e.results.length; i++) txt += e.results[i][0].transcript;
+        target.value = base + txt;
+      };
+      recog.onerror = (e) => { status.textContent = e.error === 'not-allowed' ? '⚠️ Microphone blocked' : '⚠️ ' + e.error; };
+      recog.onend = () => { listening = false; dictateBtn.textContent = '🎤 Dictate answer'; status.textContent = 'Dictation stopped ✓'; };
+      recog.start();
+    });
+  } else if (dictateBtn) {
+    dictateBtn.disabled = true;
+    document.getElementById('dictateStatus').textContent = 'Dictation not supported in this browser (try Chrome).';
+  }
+
   window.addEventListener('beforeunload', () => { if (synth) synth.cancel(); });
 })();

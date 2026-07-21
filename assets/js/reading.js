@@ -1,9 +1,10 @@
 /* Full Reading test engine — renders passages/questions, grades to band /40 */
 (function () {
   'use strict';
-  const TEST = window.READING_TEST;
+  const TESTS = window.READING_TESTS || (window.READING_TEST ? [{ name: 'Test 1', passages: window.READING_TEST }] : null);
   const wrap = document.getElementById('passages');
-  if (!TEST || !wrap) return;
+  if (!TESTS || !wrap) return;
+  let TEST = TESTS[0].passages;
 
   const OPT_SETS = {
     tfng: ['TRUE', 'FALSE', 'NOT GIVEN'],
@@ -55,12 +56,29 @@
       </div></div>`;
   }
 
-  wrap.innerHTML = TEST.map(passageHtml).join('');
-
-  // tabs
   const tabs = document.getElementById('passageTabs');
-  tabs.innerHTML = TEST.map((p, i) =>
-    `<button class="tab ${i === 0 ? 'active' : ''}" data-p="${i}">Passage ${i + 1}</button>`).join('');
+
+  function renderTest() {
+    wrap.innerHTML = TEST.map(passageHtml).join('');
+    tabs.innerHTML = TEST.map((p, i) =>
+      `<button class="tab ${i === 0 ? 'active' : ''}" data-p="${i}">Passage ${i + 1}</button>`).join('');
+    document.getElementById('answeredCount').textContent = '0';
+    document.getElementById('result').classList.remove('show');
+  }
+  renderTest();
+
+  // test selector
+  const selector = document.getElementById('testSelector');
+  if (selector && TESTS.length > 1) {
+    selector.innerHTML = TESTS.map((t, i) => `<option value="${i}">${t.name}</option>`).join('');
+    selector.addEventListener('change', () => {
+      TEST = TESTS[+selector.value].passages;
+      resetTimer();
+      renderTest();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   tabs.addEventListener('click', (e) => {
     const b = e.target.closest('.tab'); if (!b) return;
     tabs.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -138,16 +156,23 @@
     if (answered < 40 && !confirm(`You've answered ${answered}/40. Submit anyway?`)) return;
     grade();
   });
-  document.getElementById('retryBtn').addEventListener('click', () => location.reload());
+  document.getElementById('retryBtn').addEventListener('click', () => {
+    resetTimer(); renderTest(); window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
   /* timer */
   let secs = 60 * 60, timerIv = null;
   const tEl = document.getElementById('timer');
+  const startBtn = document.getElementById('startTimer');
   function render() {
     tEl.textContent = String(Math.floor(secs / 60)).padStart(2, '0') + ':' + String(secs % 60).padStart(2, '0');
     tEl.classList.toggle('low', secs <= 300);
   }
-  document.getElementById('startTimer').addEventListener('click', function () {
+  function resetTimer() {
+    if (timerIv) { clearInterval(timerIv); timerIv = null; }
+    secs = 60 * 60; startBtn.textContent = 'Start'; render();
+  }
+  startBtn.addEventListener('click', function () {
     if (timerIv) { clearInterval(timerIv); timerIv = null; this.textContent = 'Resume'; return; }
     this.textContent = 'Pause';
     timerIv = setInterval(() => {
