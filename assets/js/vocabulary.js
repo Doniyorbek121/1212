@@ -61,6 +61,20 @@
       { w: 'subsidy', p: 'noun', d: 'money given by a government to support an industry', e: 'Farming subsidies keep food prices low.' },
       { w: 'frugal', p: 'adjective', d: 'careful about spending money', e: 'Being frugal in your twenties helps you save for the future.' },
     ],
+    'Media & Culture': [
+      { w: 'censorship', p: 'noun', d: 'the control or banning of information in the media', e: 'Strict censorship limits what journalists can report.' },
+      { w: 'stereotype', p: 'noun', d: 'a fixed, oversimplified idea about a group', e: 'Advertising often reinforces gender stereotypes.' },
+      { w: 'influential', p: 'adjective', d: 'having a strong effect on people or events', e: 'Social media influencers are increasingly influential.' },
+      { w: 'heritage', p: 'noun', d: 'traditions and buildings passed down from the past', e: 'Old towns are protected as part of our cultural heritage.' },
+      { w: 'mainstream', p: 'adjective', d: 'accepted by or belonging to the majority', e: 'Streaming has moved from niche to mainstream.' },
+    ],
+    'Science & Space': [
+      { w: 'hypothesis', p: 'noun', d: 'an idea suggested as a starting point for research', e: 'The experiment was designed to test their hypothesis.' },
+      { w: 'breakthrough', p: 'noun', d: 'an important discovery or development', e: 'The vaccine was a major medical breakthrough.' },
+      { w: 'orbit', p: 'noun/verb', d: 'the curved path of an object around a star or planet', e: 'The satellite completes one orbit every ninety minutes.' },
+      { w: 'phenomenon', p: 'noun', d: 'a fact or event observed to happen', e: 'The northern lights are a natural phenomenon.' },
+      { w: 'empirical', p: 'adjective', d: 'based on observation or experiment, not theory', e: 'Scientists rely on empirical evidence, not opinion.' },
+    ],
   };
 
   // merge in any custom decks created from the admin panel

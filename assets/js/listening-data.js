@@ -415,4 +415,140 @@ window.LISTENING_TESTS = [
   },
     ],
   },
+  {
+    name: 'Test 4 - Services & Science',
+    sections: [
+  {
+    title: 'Section 1 - Leisure Centre Membership',
+    blurb: 'A phone call to join a local leisure centre.',
+    script:
+      "Good afternoon, Parkview Leisure Centre. Hello, I'd like to become a member please. " +
+      "Of course. Can I take your full name? Yes, it's Daniel Foster. F-O-S-T-E-R. " +
+      "Thank you, Daniel. And your date of birth? The fifth of March, nineteen ninety-eight. " +
+      "Which membership would you like? We have off-peak and full membership. I'll take the off-peak one, please. " +
+      "The off-peak membership is twenty-five pounds a month, and it lets you use the centre before five in the afternoon. " +
+      "That's fine, I work evenings anyway. Which activities are you most interested in? Mainly swimming and the gym. " +
+      "Great. The swimming pool is open from seven in the morning. Do note the pool is closed on Mondays for cleaning. " +
+      "Good to know. Is there anything I need to bring? Yes, please bring a photo and proof of address to collect your card. " +
+      "And there's a joining fee of ten pounds, payable once. No problem. When can I start? Your membership can begin tomorrow. " +
+      "Perfect, thank you very much. You're welcome, see you tomorrow!",
+    groups: [
+      { instr: 'Questions 1-6 - Complete the form. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.', type: 'gap',
+        qs: [
+          { n: 1, text: 'Surname:', a: 'Foster' },
+          { n: 2, text: 'Membership type:', a: 'off-peak' },
+          { n: 3, text: 'Monthly cost: £______', a: '25' },
+          { n: 4, text: 'Main activities: swimming and the ______', a: 'gym' },
+          { n: 5, text: 'The pool is closed on ______ for cleaning.', a: 'Mondays' },
+          { n: 6, text: 'One-off joining fee: £______', a: '10' },
+        ] },
+      { instr: 'Questions 7-10 - Choose the correct letter, A, B or C.', type: 'mcq',
+        qs: [
+          { n: 7, text: 'Off-peak members can use the centre', a: 'A', options: ['A. before 5pm', 'B. after 5pm', 'C. at any time'] },
+          { n: 8, text: 'The swimming pool opens at', a: 'B', options: ['A. six in the morning', 'B. seven in the morning', 'C. eight in the morning'] },
+          { n: 9, text: 'To collect the card, Daniel must bring a photo and', a: 'C', options: ['A. a bank card', 'B. a medical form', 'C. proof of address'] },
+          { n: 10, text: "Daniel's membership can start", a: 'A', options: ['A. tomorrow', 'B. next week', 'C. immediately'] },
+        ] },
+    ],
+  },
+  {
+    title: 'Section 2 - The City Aquarium',
+    blurb: 'A staff member describes the layout of an aquarium.',
+    script:
+      "Welcome to the City Aquarium. Let me quickly explain where everything is before you explore. " +
+      "As you pass through the entrance, the ticket desk is right in front of you. " +
+      "To the left of the entrance is the gift shop, which you can also visit on your way out. " +
+      "To the right is the cafe, where you can get drinks and snacks throughout the day. " +
+      "The main attraction, the underwater tunnel with sharks and rays, is straight ahead at the end of the corridor. " +
+      "Beyond the tunnel, in the far room, you'll find the tropical fish gallery, full of colourful reef species. " +
+      "A few points to remember. Please do not tap on the glass, as it frightens the animals. " +
+      "Photography is allowed, but without flash. Feeding times are the highlight of the day: the penguins are fed at eleven o'clock, " +
+      "and the sharks at three in the afternoon. Guided talks take place near the main tank every hour. " +
+      "The aquarium closes at five thirty, and the last entry is at four forty-five. We hope you enjoy your visit!",
+    groups: [
+      { instr: 'Questions 11-15 - Where is each place? Choose A-E.', type: 'match',
+        options: ['A. in front of the entrance', 'B. to the left', 'C. to the right', 'D. straight ahead', 'E. in the far room'],
+        qs: [
+          { n: 11, text: 'Ticket desk', a: 'A' },
+          { n: 12, text: 'Gift shop', a: 'B' },
+          { n: 13, text: 'Cafe', a: 'C' },
+          { n: 14, text: 'Underwater tunnel', a: 'D' },
+          { n: 15, text: 'Tropical fish gallery', a: 'E' },
+        ] },
+      { instr: 'Questions 16-20 - Complete the notes. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.', type: 'gap',
+        qs: [
+          { n: 16, text: 'Visitors must not ______ on the glass.', a: 'tap' },
+          { n: 17, text: 'Photography is allowed but without ______.', a: 'flash' },
+          { n: 18, text: 'The penguins are fed at ______ o\'clock.', a: 'eleven' },
+          { n: 19, text: 'The sharks are fed at ______ in the afternoon.', a: 'three' },
+          { n: 20, text: 'The last entry is at ______.', a: '4.45' },
+        ] },
+    ],
+  },
+  {
+    title: 'Section 3 - Discussing an Experiment',
+    blurb: 'Two students plan a science experiment with their tutor.',
+    script:
+      "So, have you two decided on your biology experiment? Yes, we want to test how light affects plant growth. " +
+      "Good idea. What's your plan exactly? We'll grow bean seedlings under different colours of light and measure their height. " +
+      "How many plants will you use? We're using twelve plants, four for each colour: red, blue and white. " +
+      "And how long will the experiment run? For three weeks, measuring the height every two days. " +
+      "Sensible. What will you keep the same? We'll give every plant the same amount of water and the same soil. " +
+      "Excellent, that's your controlled variable. One tip: measure at the same time each day for accuracy. Good point. " +
+      "How will you present the data? We'll draw a line graph comparing the three colours. " +
+      "Perfect. And don't forget to write down anything unexpected in a notebook as you go. We will. " +
+      "When do you start? On Monday, once we've set up the lamps. And the report is due at the end of the month. " +
+      "Right. Remember to include a clear conclusion linking back to your original question. Thanks, that's really helpful.",
+    groups: [
+      { instr: 'Questions 21-25 - Choose the correct letter, A, B or C.', type: 'mcq',
+        qs: [
+          { n: 21, text: 'The experiment tests how light affects', a: 'B', options: ['A. soil quality', 'B. plant growth', 'C. water use'] },
+          { n: 22, text: 'The students will use a total of', a: 'C', options: ['A. four plants', 'B. eight plants', 'C. twelve plants'] },
+          { n: 23, text: 'The experiment will run for', a: 'C', options: ['A. one week', 'B. two weeks', 'C. three weeks'] },
+          { n: 24, text: 'They will keep the water and the ______ the same.', a: 'A', options: ['A. soil', 'B. temperature', 'C. lamp'] },
+          { n: 25, text: 'The tutor advises them to measure', a: 'B', options: ['A. every hour', 'B. at the same time each day', 'C. only at the end'] },
+        ] },
+      { instr: 'Questions 26-30 - Complete the notes. Write ONE WORD OR A NUMBER.', type: 'gap',
+        qs: [
+          { n: 26, text: 'They will grow bean ______.', a: 'seedlings' },
+          { n: 27, text: 'Light colours used: red, blue and ______.', a: 'white' },
+          { n: 28, text: 'They will measure the height every ______ days.', a: 'two' },
+          { n: 29, text: 'The data will be shown on a line ______.', a: 'graph' },
+          { n: 30, text: 'The experiment starts on ______.', a: 'Monday' },
+        ] },
+    ],
+  },
+  {
+    title: 'Section 4 - Lecture: The Human Brain',
+    blurb: 'A lecture on the basics of how the brain works.',
+    script:
+      "Today we'll look at the human brain, one of the most complex objects in the known universe. " +
+      "The adult brain weighs about one and a half kilograms, yet it uses around twenty per cent of the body's energy. " +
+      "It contains roughly eighty-six billion nerve cells, called neurons, which communicate using electrical and chemical signals. " +
+      "The brain is divided into several regions. The largest part, the cerebrum, controls thought, memory and voluntary movement. " +
+      "At the back sits the cerebellum, which is responsible for balance and coordination. " +
+      "Deep inside, the hippocampus plays a key role in forming new memories. " +
+      "One remarkable feature of the brain is its plasticity, its ability to change and rewire itself in response to experience. " +
+      "This is why practising a skill physically alters the connections between neurons. " +
+      "For many years, scientists believed the adult brain could not grow new cells, but we now know that some new neurons do form, particularly in the hippocampus. " +
+      "Sleep is essential for the brain, as it helps to consolidate memories and clear out waste products. " +
+      "Understanding the brain is not only fascinating in itself but also vital for treating conditions such as dementia.",
+    groups: [
+      { instr: 'Questions 31-40 - Complete the notes. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.', type: 'gap',
+        qs: [
+          { n: 31, text: 'The adult brain weighs about ______ kilograms.', a: 'one and a half' },
+          { n: 32, text: 'The brain uses around ______ per cent of the body\'s energy.', a: 'twenty' },
+          { n: 33, text: 'Nerve cells in the brain are called ______.', a: 'neurons' },
+          { n: 34, text: 'The largest part of the brain is the ______.', a: 'cerebrum' },
+          { n: 35, text: 'The ______ controls balance and coordination.', a: 'cerebellum' },
+          { n: 36, text: 'The ______ helps form new memories.', a: 'hippocampus' },
+          { n: 37, text: "The brain's ability to rewire itself is called ______.", a: 'plasticity' },
+          { n: 38, text: 'Some new neurons form in the ______.', a: 'hippocampus' },
+          { n: 39, text: 'Sleep helps to ______ memories.', a: 'consolidate' },
+          { n: 40, text: 'Brain research is vital for treating conditions such as ______.', a: 'dementia' },
+        ] },
+    ],
+  },
+    ],
+  },
 ];
