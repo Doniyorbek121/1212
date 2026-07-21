@@ -131,7 +131,7 @@
             </div>
           </div>
           <div class="footer-bottom">
-            <span>© ${new Date().getFullYear()} IELTS Master. Built for learners worldwide.</span>
+            <span>© ${new Date().getFullYear()} IELTS Master. Built for learners worldwide. · <a href="#" onclick="startTour();return false;" style="color:var(--text-mut);">Take a tour</a></span>
             <span>Not affiliated with the British Council, IDP, or Cambridge Assessment English. · <a href="admin.html" style="color:var(--text-mut);">Admin</a></span>
           </div>
         </div>
@@ -247,6 +247,64 @@
     }
   }
 
+  /* ---- Onboarding tour ---- */
+  const TOUR = [
+    { e: '👋', t: 'Welcome to IELTS Master', p: 'Your all-in-one platform to prepare for IELTS Academic & General Training — completely in your browser.' },
+    { e: '📝', t: 'Practise all four skills', p: 'Take full-length Reading & Listening mocks, write essays, and rehearse Speaking — every test is self-marking with instant bands.' },
+    { e: '🤖', t: 'Meet your AI tutor', p: 'Chat with a Gemini-powered tutor that speaks your language — pick a personality from gentle to a savage tough-love coach.' },
+    { e: '📊', t: 'Track your progress', p: 'Your dashboard charts your band over time, and the Study Plan generator builds a week-by-week roadmap to your target.' },
+    { e: '🚀', t: 'Ready to begin?', p: 'Jump into a free practice test now — your target band is closer than you think!' },
+  ];
+
+  function buildTour() {
+    if (document.getElementById('tourOverlay')) return;
+    const ov = document.createElement('div');
+    ov.className = 'tour-overlay'; ov.id = 'tourOverlay';
+    ov.innerHTML = `<div class="tour-card">
+      <div class="tour-emoji" id="tourEmoji"></div>
+      <h3 id="tourTitle"></h3><p id="tourText"></p>
+      <div class="tour-dots" id="tourDots"></div>
+      <div class="tour-actions">
+        <button class="tour-skip" id="tourSkip">Skip</button>
+        <button class="btn btn-primary" id="tourNext">Next →</button>
+      </div></div>`;
+    document.body.appendChild(ov);
+    let i = 0;
+    const paint = () => {
+      const s = TOUR[i];
+      document.getElementById('tourEmoji').textContent = s.e;
+      document.getElementById('tourTitle').textContent = s.t;
+      document.getElementById('tourText').textContent = s.p;
+      document.getElementById('tourDots').innerHTML = TOUR.map((_, k) => `<i class="${k === i ? 'on' : ''}"></i>`).join('');
+      document.getElementById('tourNext').textContent = i === TOUR.length - 1 ? 'Start practising →' : 'Next →';
+    };
+    const close = () => { ov.classList.remove('show'); localStorage.setItem('ielts-onboarded', '1'); };
+    document.getElementById('tourSkip').addEventListener('click', close);
+    document.getElementById('tourNext').addEventListener('click', () => {
+      if (i < TOUR.length - 1) { i++; paint(); }
+      else { close(); location.href = 'practice.html'; }
+    });
+    ov.addEventListener('click', e => { if (e.target === ov) close(); });
+    window.startTour = () => { i = 0; paint(); ov.classList.add('show'); };
+    paint();
+  }
+
+  function maybeTour() {
+    buildTour();
+    if (!localStorage.getItem('ielts-onboarded') && currentPage() === 'index.html') {
+      setTimeout(() => window.startTour(), 700);
+    }
+  }
+
+  /* ---- Scroll to top ---- */
+  function initToTop() {
+    const btn = document.createElement('button');
+    btn.className = 'to-top'; btn.id = 'toTop'; btn.setAttribute('aria-label', 'Back to top'); btn.textContent = '↑';
+    document.body.appendChild(btn);
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    window.addEventListener('scroll', () => btn.classList.toggle('show', window.scrollY > 500), { passive: true });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     buildHeader();
     buildFooter();
@@ -255,5 +313,7 @@
     initCounters();
     initPWA();
     initSEO();
+    maybeTour();
+    initToTop();
   });
 })();

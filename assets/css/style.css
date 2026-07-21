@@ -408,6 +408,38 @@ p  { margin: 0 0 1rem; color: var(--text-soft); }
   .cta-band, .stats-band { padding: 36px 20px; }
 }
 
+/* ---------- Onboarding tour ---------- */
+.tour-overlay {
+  position: fixed; inset: 0; z-index: 300; display: none;
+  background: rgba(8, 15, 30, .62); backdrop-filter: blur(4px);
+  align-items: center; justify-content: center; padding: 20px;
+}
+.tour-overlay.show { display: flex; animation: fade .3s var(--ease); }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+.tour-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg); max-width: 440px; width: 100%; padding: 34px 30px; text-align: center;
+  animation: pop .35s var(--ease);
+}
+.tour-emoji { font-size: 3rem; line-height: 1; margin-bottom: 14px; }
+.tour-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
+.tour-card p { font-size: 1rem; margin-bottom: 22px; }
+.tour-dots { display: flex; gap: 7px; justify-content: center; margin-bottom: 22px; }
+.tour-dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--border); transition: .25s; }
+.tour-dots i.on { background: var(--brand-500); width: 22px; border-radius: 5px; }
+.tour-actions { display: flex; gap: 10px; justify-content: center; align-items: center; }
+.tour-skip { background: none; border: none; color: var(--text-mut); font-weight: 600; font-size: .9rem; }
+.tour-skip:hover { color: var(--text); }
+
+/* ---------- Scroll-to-top ---------- */
+.to-top {
+  position: fixed; right: 20px; bottom: 20px; z-index: 90; width: 46px; height: 46px; border-radius: 50%;
+  background: var(--brand-500); color: #fff; border: none; box-shadow: 0 8px 22px rgba(47,107,246,.4);
+  font-size: 1.2rem; opacity: 0; transform: translateY(16px) scale(.8); pointer-events: none; transition: .3s var(--ease);
+}
+.to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+.to-top:hover { background: var(--brand-600); transform: translateY(-2px); }
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
