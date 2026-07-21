@@ -19,7 +19,12 @@ Inspired by sites like ielts.gg, but with an original design system, richer inte
 | **Vocabulary** | Interactive flashcards across 5 topics with pronunciation |
 | **Band Calculator** | Overall band (official rounding) + raw-score → band conversion |
 | **Resources** | Study plans, essay templates, linking-word banks, grammar & time-management guides |
+| **AI Tutor personas** | Switch the tutor's personality — 👩‍🏫 Teacher, 🌸 Gentle, 😎 Casual buddy (street talk), 💙 Caring, 🔥 Strict coach |
+| **Admin panel** | Password-gated `/admin.html` to add vocabulary & writing prompts (they flow into the live pages), rename the brand, view stats, and export/import/wipe data |
 | **About / Contact** | Mission page and a working contact form |
+
+### Admin panel
+Open `admin.html` (also linked in the footer). Default password: **`admin123`** — change it under **Settings**. It manages content stored in the browser: custom flashcards appear on the Vocabulary page, custom prompts appear in the Writing lab, and the brand name updates the header everywhere. Use **Data → Export** for a JSON backup.
 
 Extras: light/dark theme (persisted), **installable PWA with offline support**, progress tracking & history (localStorage), SEO (Open Graph, Twitter cards, JSON-LD, sitemap, robots.txt), a custom 404 page, scroll animations, animated counters, fully responsive, keyboard shortcuts, accessible markup.
 

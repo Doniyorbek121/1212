@@ -42,6 +42,14 @@
     ],
   };
 
+  // merge in any custom decks created from the admin panel
+  try {
+    const custom = JSON.parse(localStorage.getItem('ielts-custom-vocab') || '{}');
+    Object.keys(custom).forEach(t => {
+      if (Array.isArray(custom[t]) && custom[t].length) DECKS['⭐ ' + t] = custom[t];
+    });
+  } catch (e) {}
+
   const topics = Object.keys(DECKS);
   let topic = topics[0], idx = 0, deck = DECKS[topic].slice();
 

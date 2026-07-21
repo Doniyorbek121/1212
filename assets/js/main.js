@@ -41,6 +41,15 @@
     return p === '' ? 'index.html' : p;
   }
 
+  // Brand name (admin can override via localStorage 'ielts-brand').
+  function brandHTML() {
+    const custom = (localStorage.getItem('ielts-brand') || '').trim();
+    if (!custom) return 'IELTS<span class="text-grad">Master</span>';
+    const parts = custom.split(/\s+/);
+    if (parts.length === 1) return '<span class="text-grad">' + parts[0] + '</span>';
+    return parts[0] + '<span class="text-grad">' + parts.slice(1).join(' ') + '</span>';
+  }
+
   function buildHeader() {
     const mount = document.getElementById('site-header');
     if (!mount) return;
@@ -51,7 +60,7 @@
       <nav class="nav">
         <div class="container nav-inner">
           <a class="brand" href="index.html">
-            <span class="brand-mark">iM</span> IELTS<span class="text-grad">Master</span>
+            <span class="brand-mark">iM</span> ${brandHTML()}
           </a>
           <ul class="nav-links" id="navLinks">${links}
             <li class="nav-cta-mobile" style="margin-top:8px;"><a href="practice.html" class="btn btn-primary btn-block">Start practising</a></li>
@@ -81,7 +90,7 @@
           <div class="footer-grid">
             <div>
               <a class="brand" href="index.html" style="margin-bottom:14px;">
-                <span class="brand-mark">iM</span> IELTS<span class="text-grad">Master</span>
+                <span class="brand-mark">iM</span> ${brandHTML()}
               </a>
               <p style="max-width:320px;">The complete platform to prepare for IELTS Academic & General Training — practice all four skills, track your band, and study smarter.</p>
               <div class="flex gap-sm" style="margin-top:6px;">
@@ -122,7 +131,7 @@
           </div>
           <div class="footer-bottom">
             <span>© ${new Date().getFullYear()} IELTS Master. Built for learners worldwide.</span>
-            <span>Not affiliated with the British Council, IDP, or Cambridge Assessment English.</span>
+            <span>Not affiliated with the British Council, IDP, or Cambridge Assessment English. · <a href="admin.html" style="color:var(--text-mut);">Admin</a></span>
           </div>
         </div>
       </footer>`;

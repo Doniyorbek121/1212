@@ -101,6 +101,38 @@
       localStorage.removeItem(LATEST);
       localStorage.removeItem(STREAK);
     },
+
+    /* ---- custom content (managed from the admin panel) ---- */
+    getCustomVocab() { return read('ielts-custom-vocab', {}); },
+    setCustomVocab(obj) { write('ielts-custom-vocab', obj); },
+    getCustomPrompts() { return read('ielts-custom-prompts', []); },
+    setCustomPrompts(arr) { write('ielts-custom-prompts', arr); },
+
+    /* ---- branding / settings ---- */
+    getBrand() { return localStorage.getItem('ielts-brand') || ''; },
+    setBrand(name) { name ? localStorage.setItem('ielts-brand', name) : localStorage.removeItem('ielts-brand'); },
+
+    /* ---- admin auth (client-side gate) ---- */
+    _hash(s) { let h = 0; for (let i = 0; i < s.length; i++) { h = (h << 5) - h + s.charCodeAt(i); h |= 0; } return String(h); },
+    hasAdminPass() { return !!localStorage.getItem('ielts-admin-pass'); },
+    setAdminPass(p) { localStorage.setItem('ielts-admin-pass', this._hash(p)); },
+    checkAdminPass(p) {
+      const stored = localStorage.getItem('ielts-admin-pass');
+      if (!stored) return false;
+      return stored === this._hash(p);
+    },
+
+    /* ---- export / import everything ---- */
+    exportAll() {
+      const keys = ['ielts-history','ielts-progress','ielts-streak','ielts-goal','ielts-custom-vocab','ielts-custom-prompts','ielts-brand'];
+      const out = {};
+      keys.forEach(k => { const v = localStorage.getItem(k); if (v !== null) out[k] = v; });
+      return JSON.stringify(out, null, 2);
+    },
+    importAll(json) {
+      const data = JSON.parse(json);
+      Object.keys(data).forEach(k => localStorage.setItem(k, data[k]));
+    },
   };
 
   window.Store = Store;

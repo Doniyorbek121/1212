@@ -49,6 +49,24 @@
     },
   };
 
+  // merge in custom prompts created from the admin panel
+  try {
+    const custom = JSON.parse(localStorage.getItem('ielts-custom-prompts') || '[]');
+    const tabsEl = document.getElementById('taskTabs');
+    custom.forEach((p, i) => {
+      const key = 'custom' + i;
+      TASKS[key] = {
+        type: 'Task 2 · Custom', prompt: p, meta: 'Write at least 250 words · Suggested time: 40 minutes',
+        min: 250, time: '40 min',
+        checklist: ['Clear position in the introduction', 'Well-developed body paragraphs', 'A range of linking words', 'A conclusion that restates your view'],
+        model: 'This is a custom prompt added from the admin panel — write your own response and use the AI feedback button for a band estimate and improvements.',
+      };
+      const b = document.createElement('button');
+      b.className = 'tab'; b.dataset.task = key; b.textContent = '⭐ Custom ' + (i + 1);
+      tabsEl.appendChild(b);
+    });
+  } catch (e) {}
+
   let current = 't2';
 
   function render() {
