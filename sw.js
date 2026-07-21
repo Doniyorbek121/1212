@@ -1,11 +1,11 @@
 /* IELTS Master — service worker for offline support.
    Cache-first for our own assets; network fallback for the rest. */
-const CACHE = 'ielts-master-v3';
+const CACHE = 'ielts-master-v4';
 const ASSETS = [
   './', 'index.html', 'courses.html', 'practice.html', 'dashboard.html',
   'reading.html', 'listening.html', 'writing.html', 'speaking.html',
   'ai-tutor.html', 'vocabulary.html', 'calculator.html', 'about.html',
-  'resources.html', 'admin.html', '404.html', 'manifest.json',
+  'resources.html', 'plan.html', 'admin.html', '404.html', 'manifest.json',
   'assets/css/style.css',
   'assets/js/main.js', 'assets/js/store.js', 'assets/js/ai.js',
   'assets/js/reading.js', 'assets/js/reading-data.js',
@@ -13,7 +13,7 @@ const ASSETS = [
   'assets/js/writing.js', 'assets/js/speaking.js',
   'assets/js/vocabulary.js', 'assets/js/calculator.js',
   'assets/js/practice.js', 'assets/js/tutor.js', 'assets/js/dashboard.js',
-  'assets/js/admin.js',
+  'assets/js/admin.js', 'assets/js/plan.js',
 ];
 
 self.addEventListener('install', (e) => {

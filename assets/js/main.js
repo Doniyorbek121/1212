@@ -31,8 +31,8 @@
     ['practice.html', 'Practice'],
     ['dashboard.html', 'Dashboard'],
     ['ai-tutor.html', 'AI Tutor'],
+    ['plan.html', 'Study Plan'],
     ['vocabulary.html', 'Vocabulary'],
-    ['resources.html', 'Resources'],
     ['about.html', 'About'],
   ];
 
@@ -121,6 +121,7 @@
             <div>
               <h4>More</h4>
               <ul>
+                <li><a href="plan.html">Study plan generator</a></li>
                 <li><a href="resources.html">Tips &amp; resources</a></li>
                 <li><a href="dashboard.html">My dashboard</a></li>
                 <li><a href="calculator.html">Band calculator</a></li>
