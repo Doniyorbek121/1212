@@ -144,8 +144,10 @@
     if (!('IntersectionObserver' in window) || !els.length) { els.forEach(e => e.classList.add('in')); return; }
     const io = new IntersectionObserver((ents) => {
       ents.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: .12 });
+    }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
     els.forEach(e => io.observe(e));
+    // safety net: never leave content permanently hidden if the observer misfires
+    setTimeout(() => els.forEach(e => e.classList.add('in')), 2500);
   }
 
   /* ---- FAQ accordion (event delegation) ---- */
