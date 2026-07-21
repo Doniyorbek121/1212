@@ -40,6 +40,27 @@
       { w: 'redundancy', p: 'noun', d: 'the situation of losing a job because it is no longer needed', e: 'Automation has led to redundancies in some factories.' },
       { w: 'work-life balance', p: 'noun phrase', d: 'the division of time between work and personal life', e: 'Flexible hours help employees achieve a better work-life balance.' },
     ],
+    'Crime & Law': [
+      { w: 'deterrent', p: 'noun', d: 'something that discourages an action, such as crime', e: 'Long prison sentences are intended to act as a deterrent.' },
+      { w: 'rehabilitation', p: 'noun', d: 'helping an offender return to normal life in society', e: 'Prisons should focus on rehabilitation, not just punishment.' },
+      { w: 'offence', p: 'noun', d: 'an illegal act; a crime', e: 'Driving without a licence is a serious offence.' },
+      { w: 'surveillance', p: 'noun', d: 'close watching of a person or place', e: 'CCTV surveillance has increased in most city centres.' },
+      { w: 'lenient', p: 'adjective', d: 'not strict; giving mild punishment', e: 'Some argue that courts are too lenient with young offenders.' },
+    ],
+    'Travel & Tourism': [
+      { w: 'itinerary', p: 'noun', d: 'a planned route or schedule for a journey', e: 'Our itinerary included three cities in five days.' },
+      { w: 'ecotourism', p: 'noun', d: 'tourism that aims to protect the natural environment', e: 'Ecotourism can fund the conservation of rainforests.' },
+      { w: 'off the beaten track', p: 'idiom', d: 'in a place far from where people usually go', e: 'We prefer villages that are off the beaten track.' },
+      { w: 'excursion', p: 'noun', d: 'a short trip, usually for pleasure', e: 'The hotel organises daily excursions to nearby ruins.' },
+      { w: 'seasonal', p: 'adjective', d: 'happening or popular at a particular time of year', e: 'Many coastal towns rely on seasonal tourism.' },
+    ],
+    'Money & Economy': [
+      { w: 'recession', p: 'noun', d: 'a period when the economy shrinks', e: 'Unemployment usually rises during a recession.' },
+      { w: 'disposable income', p: 'noun phrase', d: 'money left after paying taxes and essentials', e: 'Higher wages give families more disposable income.' },
+      { w: 'inflation', p: 'noun', d: 'a general rise in prices over time', e: 'Rising inflation reduces the value of savings.' },
+      { w: 'subsidy', p: 'noun', d: 'money given by a government to support an industry', e: 'Farming subsidies keep food prices low.' },
+      { w: 'frugal', p: 'adjective', d: 'careful about spending money', e: 'Being frugal in your twenties helps you save for the future.' },
+    ],
   };
 
   // merge in any custom decks created from the admin panel

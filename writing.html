@@ -22,8 +22,9 @@
   <div class="container" style="padding-bottom:80px;">
     <div class="tabs" id="taskTabs">
       <button class="tab active" data-task="t2">Task 2 — Essay</button>
-      <button class="tab" data-task="t1a">Task 1 — Academic (chart)</button>
-      <button class="tab" data-task="t1g">Task 1 — General (letter)</button>
+      <button class="tab" data-task="t1a">Task 1 — Bar chart</button>
+      <button class="tab" data-task="t1line">Task 1 — Line graph</button>
+      <button class="tab" data-task="t1g">Task 1 — Letter</button>
     </div>
 
     <div class="reading-layout">
@@ -32,6 +33,7 @@
         <div class="panel panel-pad" style="margin-bottom:18px;">
           <div class="tag" id="promptType">Task 2</div>
           <p id="promptText" style="font-size:1.05rem;color:var(--text);font-weight:600;margin-top:12px;"></p>
+          <div id="chartBox" style="display:none;margin:14px 0;"></div>
           <p class="small muted mb-0" id="promptMeta"></p>
         </div>
 
