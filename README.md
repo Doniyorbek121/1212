@@ -18,6 +18,7 @@ Inspired by sites like ielts.gg, but with an original design system, richer inte
 | **AI Tutor** | Chat with a Gemini-powered IELTS tutor (bring your own API key) |
 | **Vocabulary** | Interactive flashcards across 5 topics with pronunciation |
 | **Band Calculator** | Overall band (official rounding) + raw-score → band conversion |
+| **Full Mock Exam** | Sit all four skills in sequence (Listening → Reading → Writing → Speaking) and get one overall band with the official rounding — a stepper-guided full exam simulation |
 | **Study Plan** | Generate a personalised week-by-week roadmap from your current band, target, daily hours & weeks — daily tasks that link to practice, plus copy/download/print and optional AI enhancement |
 | **Resources** | Study plans, essay templates, linking-word banks, grammar & time-management guides |
 | **AI Tutor personas** | Switch the tutor's personality — 👩‍🏫 Teacher, 🌸 Gentle, 😎 Casual buddy (street talk), 🥊 Savage tough-love coach, 💙 Caring, 🔥 Strict |
