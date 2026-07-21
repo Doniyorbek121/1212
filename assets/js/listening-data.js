@@ -277,4 +277,142 @@ window.LISTENING_TESTS = [
   },
     ],
   },
+  {
+    name: 'Test 3 - Travel & Nature',
+    sections: [
+  {
+    title: 'Section 1 - Booking a Coach Tour',
+    blurb: 'A phone call to reserve places on a sightseeing tour.',
+    script:
+      "Good morning, Highland Coach Tours, how can I help you? Hello, I'd like to book a day tour please. " +
+      "Certainly. Which tour are you interested in? The Lakes and Castles tour, if it's still available. " +
+      "Yes, that one runs on Saturdays. Can I take your name? It's Emma Carter. C-A-R-T-E-R. " +
+      "Thank you, Emma. How many people will be travelling? There'll be four of us in total. " +
+      "Four passengers. The tour costs thirty-five pounds per adult, but there's a discount for groups of four or more, so it'll be thirty pounds each. " +
+      "That's great. What time does it leave? The coach departs at eight fifteen sharp from the main square. " +
+      "Please arrive ten minutes early. Is lunch included? Lunch isn't included, but there's a one-hour stop at a village with several cafes. " +
+      "Do we need to bring anything? Just comfortable shoes and a waterproof jacket, as we'll do some walking. " +
+      "And how do I pay? You can pay online, or in cash on the day. I'll pay on the day, thanks. " +
+      "Perfect. I'll email you a confirmation. Could I take your email? Yes, it's emma, then the number seven, at mailbox dot com. " +
+      "Got it. See you on Saturday!",
+    groups: [
+      { instr: 'Questions 1-6 - Complete the booking form. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.', type: 'gap',
+        qs: [
+          { n: 1, text: 'Surname:', a: 'Carter' },
+          { n: 2, text: 'Tour chosen: the Lakes and ______ tour', a: 'Castles' },
+          { n: 3, text: 'Number of passengers:', a: 'four' },
+          { n: 4, text: 'Price per adult with discount: £______', a: '30' },
+          { n: 5, text: 'Departure time: ______ from the main square', a: '8.15' },
+          { n: 6, text: 'Payment method chosen: ______', a: 'cash' },
+        ] },
+      { instr: 'Questions 7-10 - Choose the correct letter, A, B or C.', type: 'mcq',
+        qs: [
+          { n: 7, text: 'The tour runs on', a: 'C', options: ['A. Fridays', 'B. Sundays', 'C. Saturdays'] },
+          { n: 8, text: 'Passengers are asked to arrive', a: 'B', options: ['A. five minutes early', 'B. ten minutes early', 'C. fifteen minutes early'] },
+          { n: 9, text: 'During the trip there is a one-hour stop for', a: 'A', options: ['A. lunch at a village', 'B. a guided museum tour', 'C. shopping'] },
+          { n: 10, text: 'Passengers are advised to bring', a: 'C', options: ['A. a packed lunch', 'B. a camera', 'C. a waterproof jacket'] },
+        ] },
+    ],
+  },
+  {
+    title: 'Section 2 - A Nature Reserve',
+    blurb: 'A ranger describes a wildlife reserve to visitors.',
+    script:
+      "Welcome, everyone, to Willow Creek Nature Reserve. Let me explain the layout and a few rules before you set off. " +
+      "From this visitor centre, the main trail leads straight ahead towards the lake. " +
+      "To your left is the bird hide, a quiet shelter where you can watch water birds without disturbing them. " +
+      "To your right you'll find the picnic area, next to the car park. " +
+      "If you follow the trail past the lake, the butterfly garden is on the far side, behind the old mill. " +
+      "The reserve is home to over one hundred species of bird, as well as deer, foxes and, if you're lucky, otters along the river. " +
+      "A few important rules. Please keep dogs on a lead at all times, as they can frighten the wildlife. " +
+      "Do not pick the flowers or feed the animals. And please take all your litter home with you. " +
+      "The best time to see the most animals is early morning or just before sunset. " +
+      "Guided walks leave from here every day at ten o'clock and last about ninety minutes. " +
+      "Finally, the cafe in the visitor centre closes at four thirty, so do stop by before then. Enjoy your visit!",
+    groups: [
+      { instr: 'Questions 11-15 - Where is each place? Choose A-E.', type: 'match',
+        options: ['A. straight ahead', 'B. to the left', 'C. to the right', 'D. behind the old mill', 'E. in the visitor centre'],
+        qs: [
+          { n: 11, text: 'The lake', a: 'A' },
+          { n: 12, text: 'The bird hide', a: 'B' },
+          { n: 13, text: 'The picnic area', a: 'C' },
+          { n: 14, text: 'The butterfly garden', a: 'D' },
+          { n: 15, text: 'The cafe', a: 'E' },
+        ] },
+      { instr: 'Questions 16-20 - Complete the notes. Write NO MORE THAN TWO WORDS AND/OR A NUMBER.', type: 'gap',
+        qs: [
+          { n: 16, text: 'The reserve has over ______ species of bird.', a: 'one hundred' },
+          { n: 17, text: 'Along the river you may see ______.', a: 'otters' },
+          { n: 18, text: 'Dogs must be kept on a ______ at all times.', a: 'lead' },
+          { n: 19, text: 'Guided walks leave every day at ______.', a: 'ten' },
+          { n: 20, text: 'The cafe closes at ______.', a: '4.30' },
+        ] },
+    ],
+  },
+  {
+    title: 'Section 3 - Planning a Field Trip',
+    blurb: 'Two students discuss a geography field trip with their tutor.',
+    script:
+      "So, have you both decided where to go for your geography field trip? Yes, we're thinking of the river valley to study erosion. " +
+      "Good topic. Why the river rather than the coast? Well, the coast is further away, and the river site is easier to reach by bus. " +
+      "Sensible. What exactly will you measure? We'll measure the width and depth of the river at three different points. " +
+      "And we'll record the speed of the water using a floating object and a stopwatch. Excellent method. " +
+      "How will you present your results? We plan to draw cross-section diagrams and a couple of graphs. " +
+      "Make sure your graphs have clear labels; that's where students often lose marks. Noted. " +
+      "One safety point: rivers can be dangerous, so never work alone near the water, and always wear boots. " +
+      "When are you planning to go? We were thinking of next Friday, if the weather is dry. " +
+      "Check the forecast first; if it has rained heavily, the river will be too high and fast. Good idea. " +
+      "And remember to hand in your risk assessment form before you go. We'll do that on Wednesday. Perfect.",
+    groups: [
+      { instr: 'Questions 21-25 - Choose the correct letter, A, B or C.', type: 'mcq',
+        qs: [
+          { n: 21, text: 'The students chose the river site mainly because it is', a: 'B', options: ['A. more interesting', 'B. easier to reach', 'C. cheaper to visit'] },
+          { n: 22, text: 'They will measure the river at', a: 'C', options: ['A. one point', 'B. two points', 'C. three points'] },
+          { n: 23, text: 'To measure water speed they will use a floating object and a', a: 'A', options: ['A. stopwatch', 'B. ruler', 'C. camera'] },
+          { n: 24, text: 'The tutor warns that students often lose marks on', a: 'B', options: ['A. their conclusions', 'B. graph labels', 'C. spelling'] },
+          { n: 25, text: 'The trip depends on', a: 'C', options: ['A. transport being available', 'B. the tutor coming', 'C. the weather being dry'] },
+        ] },
+      { instr: 'Questions 26-30 - Complete the notes. Write ONE WORD OR A DATE.', type: 'gap',
+        qs: [
+          { n: 26, text: 'Topic of study: river ______', a: 'erosion' },
+          { n: 27, text: 'They will measure the width and ______ of the river.', a: 'depth' },
+          { n: 28, text: 'For safety, students must never work ______ near the water.', a: 'alone' },
+          { n: 29, text: 'Everyone must wear ______.', a: 'boots' },
+          { n: 30, text: 'The risk assessment form is due on ______.', a: 'Wednesday' },
+        ] },
+    ],
+  },
+  {
+    title: 'Section 4 - Lecture: Volcanoes',
+    blurb: 'A lecture on how volcanoes form and affect us.',
+    script:
+      "In today's lecture we'll explore volcanoes: how they form, why they erupt, and how they affect human life. " +
+      "The Earth's surface is made up of enormous plates that slowly move. Most volcanoes form where two of these plates meet. " +
+      "Beneath the surface lies molten rock called magma. When magma rises and reaches the surface, we call it lava. " +
+      "Pressure from gases trapped in the magma is what causes an eruption. The more gas, the more explosive the eruption tends to be. " +
+      "Volcanoes are often described using their shape. A tall, steep-sided volcano is called a stratovolcano, " +
+      "while a broad, gently sloping one is known as a shield volcano. " +
+      "Eruptions can be destructive, burying towns in ash and sending rivers of lava down the slopes. " +
+      "Yet volcanoes also bring benefits. Volcanic soil is extremely fertile, which is why many people farm near them despite the risks. " +
+      "They also provide geothermal energy, a clean source of power produced from the heat of the Earth. " +
+      "Scientists who study volcanoes are called volcanologists, and they monitor warning signs such as small earthquakes and escaping gas. " +
+      "Thanks to this monitoring, many communities can now be evacuated safely before a major eruption occurs.",
+    groups: [
+      { instr: 'Questions 31-40 - Complete the notes. Write NO MORE THAN TWO WORDS for each answer.', type: 'gap',
+        qs: [
+          { n: 31, text: "The Earth's surface is made of moving ______.", a: 'plates' },
+          { n: 32, text: 'Molten rock below the surface is called ______.', a: 'magma' },
+          { n: 33, text: 'When it reaches the surface it is called ______.', a: 'lava' },
+          { n: 34, text: 'Eruptions are caused by pressure from ______.', a: 'gases' },
+          { n: 35, text: 'A tall, steep volcano is a ______.', a: 'stratovolcano' },
+          { n: 36, text: 'A broad, gently sloping volcano is a ______ volcano.', a: 'shield' },
+          { n: 37, text: 'Volcanic ______ is very fertile for farming.', a: 'soil' },
+          { n: 38, text: 'Volcanoes can provide ______ energy.', a: 'geothermal' },
+          { n: 39, text: 'Scientists who study volcanoes are called ______.', a: 'volcanologists' },
+          { n: 40, text: 'Warning signs include escaping gas and small ______.', a: 'earthquakes' },
+        ] },
+    ],
+  },
+    ],
+  },
 ];
