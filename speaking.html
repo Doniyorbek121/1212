@@ -63,6 +63,29 @@
       </div>
     </div>
 
+    <!-- RECORDER -->
+    <div class="panel panel-pad mt-3">
+      <div class="flex between items-center wrap gap">
+        <div><h3 class="mb-0">🎙️ Record your answer</h3><p class="small muted mb-0">Record yourself, then listen back to spot hesitations and pronunciation.</p></div>
+        <div class="flex gap-sm wrap">
+          <button class="btn btn-accent" id="recBtn">● Record</button>
+          <button class="btn btn-ghost" id="recStop" disabled>■ Stop</button>
+          <span class="muted small" id="recStatus">Ready</span>
+        </div>
+      </div>
+      <audio id="player" controls style="width:100%;margin-top:14px;display:none;"></audio>
+    </div>
+
+    <!-- AI FEEDBACK -->
+    <div class="panel panel-pad mt-3">
+      <div class="flex between items-center"><h3 class="mb-0">🤖 AI feedback on your answer</h3><span class="tag">Gemini</span></div>
+      <p class="small muted">Type (or paste) what you said, and the AI examiner will estimate your band and suggest improvements.</p>
+      <div id="aiKeyPanel" class="mt-2"></div>
+      <textarea class="field mt-2" id="speakText" style="min-height:110px;" placeholder="Type your spoken answer here…"></textarea>
+      <button class="btn btn-accent mt-2" id="speakAiBtn">Get AI feedback</button>
+      <div id="speakFeedback" class="mt-2" style="white-space:pre-wrap;line-height:1.65;color:var(--text);"></div>
+    </div>
+
     <div class="center mt-3">
       <a href="vocabulary.html" class="btn btn-ghost">Next: Vocabulary →</a>
     </div>
@@ -70,6 +93,8 @@
 
   <div id="site-footer"></div>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/ai.js"></script>
   <script src="assets/js/speaking.js"></script>
 </body>
 </html>

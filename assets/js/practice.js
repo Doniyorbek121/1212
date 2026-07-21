@@ -16,9 +16,10 @@
     try { p = JSON.parse(localStorage.getItem('ielts-progress') || '{}'); } catch (e) {}
     grid.innerHTML = SKILLS.map(s => {
       const r = p[s.key];
-      const band = r ? r.band.toFixed(1) : '—';
+      const hasBand = r && typeof r.band === 'number';
+      const band = hasBand ? r.band.toFixed(1) : '—';
       const detail = r ? (r.correct != null ? r.correct + '/' + r.total + ' correct' : 'practised') : 'Not attempted yet';
-      const pct = r ? Math.round((r.band / 9) * 100) : 0;
+      const pct = hasBand ? Math.round((r.band / 9) * 100) : 0;
       return `<div class="card" style="padding:20px;">
         <div class="flex between items-center"><span style="font-size:1.6rem;">${s.icon}</span>
           <b class="text-grad" style="font-size:1.5rem;">${band}</b></div>

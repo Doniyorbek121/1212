@@ -106,5 +106,73 @@
   document.getElementById('cueReset').addEventListener('click', resetTimer);
 
   renderQ();
+
+  /* ---- Audio recorder ---- */
+  const recBtn = document.getElementById('recBtn');
+  if (recBtn && navigator.mediaDevices && window.MediaRecorder) {
+    const stopBtn = document.getElementById('recStop');
+    const status = document.getElementById('recStatus');
+    const player = document.getElementById('player');
+    let rec = null, chunks = [], stream = null, tick = null, t0 = 0;
+
+    recBtn.addEventListener('click', async () => {
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      } catch (e) { status.textContent = '⚠️ Microphone access denied.'; return; }
+      chunks = [];
+      rec = new MediaRecorder(stream);
+      rec.ondataavailable = e => { if (e.data.size) chunks.push(e.data); };
+      rec.onstop = () => {
+        const blob = new Blob(chunks, { type: chunks[0]?.type || 'audio/webm' });
+        player.src = URL.createObjectURL(blob);
+        player.style.display = 'block';
+        stream.getTracks().forEach(t => t.stop());
+        if (window.Store) Store.record('speaking', { practised: true, mode: 'recording' });
+      };
+      rec.start();
+      recBtn.disabled = true; stopBtn.disabled = false;
+      t0 = Date.now();
+      tick = setInterval(() => {
+        const s = Math.floor((Date.now() - t0) / 1000);
+        status.textContent = '● Recording ' + Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+      }, 500);
+    });
+    stopBtn.addEventListener('click', () => {
+      if (rec && rec.state !== 'inactive') rec.stop();
+      clearInterval(tick);
+      recBtn.disabled = false; stopBtn.disabled = true;
+      status.textContent = 'Recorded ✓ — listen back below';
+    });
+  } else if (recBtn) {
+    recBtn.disabled = true;
+    document.getElementById('recStatus').textContent = 'Recording not supported in this browser.';
+  }
+
+  /* ---- AI feedback ---- */
+  const aiBtn = document.getElementById('speakAiBtn');
+  if (aiBtn && window.AI) {
+    AI.mountKeyPanel(document.getElementById('aiKeyPanel'));
+    aiBtn.addEventListener('click', async () => {
+      const out = document.getElementById('speakFeedback');
+      const text = document.getElementById('speakText').value.trim();
+      if (text.split(/\s+/).filter(Boolean).length < 15) { out.textContent = 'Please type at least a couple of sentences of your answer first.'; return; }
+      if (!AI.hasKey()) { out.textContent = 'Connect your Gemini API key above to get AI feedback.'; return; }
+      let question = '';
+      if (part === 'p2') question = document.getElementById('cueTitle').textContent;
+      else question = document.getElementById('qText').textContent;
+      out.textContent = '🤖 Assessing your answer against the speaking band descriptors…';
+      aiBtn.disabled = true;
+      const system = 'You are a certified IELTS Speaking examiner. Assess the candidate answer using the four criteria: ' +
+        'Fluency & Coherence, Lexical Resource, Grammatical Range & Accuracy, and Pronunciation (judge from word choice/structure). ' +
+        'Give an estimated band, one strength and two specific improvements, plus a short model upgrade of one sentence. Be concise and encouraging.';
+      try {
+        const reply = await AI.generate('QUESTION: ' + question + '\n\nCANDIDATE ANSWER:\n' + text, { system, temperature: 0.4 });
+        out.textContent = reply;
+        if (window.Store) Store.record('speaking', { practised: true, mode: 'ai-feedback' });
+      } catch (err) { out.textContent = '⚠️ ' + AI.friendlyError(err); }
+      finally { aiBtn.disabled = false; }
+    });
+  }
+
   window.addEventListener('beforeunload', () => { if (synth) synth.cancel(); });
 })();

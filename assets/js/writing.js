@@ -135,6 +135,12 @@
       try {
         const reply = await AI.generate(prompt, { system, temperature: 0.4 });
         out.textContent = reply;
+        // try to extract an overall band from the feedback to log progress
+        const m = reply.match(/overall[^0-9]*([4-9](?:\.5|\.0)?)/i) || reply.match(/band[^0-9]*([4-9](?:\.5|\.0)?)/i);
+        if (window.Store) {
+          if (m) Store.record('writing', { band: parseFloat(m[1]), mode: current });
+          else Store.record('writing', { practised: true, mode: current });
+        }
       } catch (err) {
         out.textContent = '⚠️ ' + AI.friendlyError(err);
       } finally {

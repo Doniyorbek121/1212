@@ -29,6 +29,7 @@
     ['index.html', 'Home'],
     ['courses.html', 'Courses'],
     ['practice.html', 'Practice'],
+    ['dashboard.html', 'Dashboard'],
     ['ai-tutor.html', 'AI Tutor'],
     ['vocabulary.html', 'Vocabulary'],
     ['calculator.html', 'Band Score'],
@@ -168,11 +169,29 @@
     nums.forEach(n => io.observe(n));
   }
 
+  /* ---- PWA: inject manifest + theme color, register service worker ---- */
+  function initPWA() {
+    if (!document.querySelector('link[rel="manifest"]')) {
+      const link = document.createElement('link');
+      link.rel = 'manifest'; link.href = 'manifest.json';
+      document.head.appendChild(link);
+    }
+    if (!document.querySelector('meta[name="theme-color"]')) {
+      const meta = document.createElement('meta');
+      meta.name = 'theme-color'; meta.content = '#2f6bf6';
+      document.head.appendChild(meta);
+    }
+    if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     buildHeader();
     buildFooter();
     initReveal();
     initFaq();
     initCounters();
+    initPWA();
   });
 })();

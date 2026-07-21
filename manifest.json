@@ -1,0 +1,19 @@
+{
+  "name": "IELTS Master — IELTS Preparation",
+  "short_name": "IELTS Master",
+  "description": "Practise IELTS Reading, Listening, Writing and Speaking with real tests, band scores and an AI tutor.",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f6f8fc",
+  "theme_color": "#2f6bf6",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='112' fill='%232f6bf6'/%3E%3Ctext x='256' y='350' font-size='280' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EiM%3C/text%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

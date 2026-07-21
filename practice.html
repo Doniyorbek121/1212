@@ -23,7 +23,10 @@
     <div class="panel panel-pad" id="progressPanel" style="margin-bottom:26px;">
       <div class="flex between items-center wrap gap">
         <div><h3 class="mb-0">Your progress</h3><p class="small muted mb-0">Based on your most recent attempts on this device.</p></div>
-        <button class="btn btn-ghost" id="clearProgress">Reset progress</button>
+        <div class="flex gap-sm wrap">
+          <a href="dashboard.html" class="btn btn-primary">📊 Full dashboard</a>
+          <button class="btn btn-ghost" id="clearProgress">Reset progress</button>
+        </div>
       </div>
       <div class="grid grid-4 mt-3" id="progressGrid"></div>
     </div>
@@ -31,13 +34,13 @@
     <div class="grid grid-3">
       <a href="reading.html" class="card c-read reveal" style="display:block;">
         <div class="ico">📖</div><h3>Reading</h3>
-        <p>A full Academic passage with 13 questions across three question types.</p>
-        <span class="tag mt-2" style="display:inline-block;">13 questions · 20 min</span>
+        <p>A full Academic mock: three passages, 40 questions across every question type.</p>
+        <span class="tag mt-2" style="display:inline-block;">40 questions · 60 min</span>
       </a>
       <a href="listening.html" class="card c-listen reveal" style="display:block;">
         <div class="ico">🎧</div><h3>Listening</h3>
-        <p>Section 1 with real audio playback, note completion and multiple choice.</p>
-        <span class="tag mt-2" style="display:inline-block;">10 questions · audio</span>
+        <p>Four full sections with real audio playback, note completion and multiple choice.</p>
+        <span class="tag mt-2" style="display:inline-block;">40 questions · audio</span>
       </a>
       <a href="writing.html" class="card c-write reveal" style="display:block;">
         <div class="ico">✍️</div><h3>Writing</h3>
